@@ -179,7 +179,10 @@ public class UserController extends HttpServlet {
         userService.changeAvatar(avatar, id);
         request.setAttribute("avatar", avatar);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/js.jsp");
-        dispatcher.forward(request, response);
+//=======
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/account-profile.jsp");
+//>>>>>>> eae6ee7b856763177f3f3ac1264864fb357dfe9d
+//        dispatcher.forward(request, response);
 
     }
 }
