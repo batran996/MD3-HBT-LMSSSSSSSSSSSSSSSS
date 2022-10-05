@@ -240,8 +240,8 @@
             <div class="dropdown">
                 <p class="dropbtn">Bang Dieu Khien</p>
                 <div class="dropdown-content">
-                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>
-                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>
+<%--                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>--%>
+<%--                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>--%>
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
