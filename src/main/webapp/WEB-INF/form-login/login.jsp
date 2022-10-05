@@ -49,7 +49,7 @@
 
                         <div class="form-outline mb-4">
                             <input name="username" type="text" id="form2Example18" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example18">Email address</label>
+                            <label class="form-label" for="form2Example18">User name</label>
                         </div>
 
                         <div class="form-outline mb-4">
