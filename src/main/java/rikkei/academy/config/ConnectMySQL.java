@@ -10,6 +10,7 @@ public class ConnectMySQL {
    private static final String USER = "root";
    private static final String PASS = "haphamlathe";
 
+
    public static Connection getConnection(){
        try {
            Class.forName("com.mysql.jdbc.Driver");

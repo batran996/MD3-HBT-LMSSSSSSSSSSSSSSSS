@@ -214,7 +214,7 @@
     <input type="hidden" name="action" value="home">
     <nav>
         <div class="logo">
-            <h1 style="text-align: center;color: red; " >HOME ADMIN HBT</h1>
+            <h1>WELCOME : ${user.name}</h1>
         </div>
         <ul class="nav-links">
 
@@ -242,8 +242,6 @@
             <div class="dropdown">
                 <p class="dropbtn">Bang Dieu Khien</p>
                 <div class="dropdown-content">
-<%--                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>--%>
-<%--                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>--%>
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
