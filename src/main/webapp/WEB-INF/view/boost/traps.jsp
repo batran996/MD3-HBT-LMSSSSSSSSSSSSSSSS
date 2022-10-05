@@ -89,9 +89,6 @@
             }
         }
 
-        body{
-            background-image: url("/img/dexx.jpg");
-        }
 
         @media screen and (max-width: 768px) {
             body {
@@ -193,8 +190,6 @@
 
     </style>
 <body>
-<h1>Test image</h1>
-<img src="/img/dexx.jpg" alt="test">
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
