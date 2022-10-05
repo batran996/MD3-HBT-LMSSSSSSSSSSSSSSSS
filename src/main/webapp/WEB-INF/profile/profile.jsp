@@ -59,6 +59,7 @@
         }
 
         .logo {
+
             color: rgb(226, 226, 226);
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -66,6 +67,7 @@
         }
 
         .nav-links {
+
             display: flex;
             /*background-color: darkred;*/
             justify-content: space-around;
@@ -208,11 +210,17 @@
             background-color: #ffd200;
         }
 
+        .anh1{
+            display: flex;
+            justify-content: center;
+        }
     </style>
 <body>
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
+        <img class="anh1" style="width: 5%" src="/img/LOGO.png" alt="">
+
         <div class="logo">
             <h1>WELCOME : ${user.name}</h1>
         </div>
@@ -234,7 +242,7 @@
             <div class="dropdown">
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
-                    <a href="/HomeServlet?action=jv">Fullstack Java 6 tháng</a>
+                    <a href="/JavaServlet?action=jv6">Fullstack Java 6 tháng</a>
                     <a href="/HomeServlet?action=js">Fullstack Javascript 6 tháng</a>
                 </div>
             </div>
@@ -245,13 +253,18 @@
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
-
                 </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="/AdminServlet?action="><p class="dropbtn">CRUD</p></a>
             </div>
 
             <div class="dropdown">
                 <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>
             </div>
+
+
 
 
         </ul>
