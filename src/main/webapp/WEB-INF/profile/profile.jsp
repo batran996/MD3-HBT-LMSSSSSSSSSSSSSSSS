@@ -111,6 +111,8 @@
         @media screen and (max-width: 768px) {
             body {
                 overflow-x: hidden;
+                background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+
             }
 
             .nav-links {
