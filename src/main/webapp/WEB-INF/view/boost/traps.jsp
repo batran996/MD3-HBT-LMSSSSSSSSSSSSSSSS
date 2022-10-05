@@ -1,18 +1,3 @@
-
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<jsp:include page='../boostrap/boostrap.jsp'>--%>
-<%--    <jsp:param name="articleId" value=""/>--%>
-<%--</jsp:include>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Title</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<h1>WELCOME : ${user.name}</h1>--%>
-<%--<a href="users?action=logout">LOG OUT</a>--%>
-<%--<a href="users?action=change_avatar"> Change avatar</a>--%>
-<%--</body>--%>
-<%--</html>--%>
 <%--
   Created by IntelliJ IDEA.
   User: doquyen7796
@@ -105,7 +90,7 @@
         }
 
         body{
-            background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+            background-image: url("/img/dexx.jpg");
         }
 
         @media screen and (max-width: 768px) {
@@ -208,6 +193,8 @@
 
     </style>
 <body>
+<h1>Test image</h1>
+<img src="/img/dexx.jpg" alt="test">
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
@@ -240,8 +227,8 @@
             <div class="dropdown">
                 <p class="dropbtn">Bang Dieu Khien</p>
                 <div class="dropdown-content">
-<%--                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>--%>
-<%--                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>--%>
+                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>
+                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
@@ -250,7 +237,7 @@
             </div>
 
             <div class="dropdown">
-                <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>
+                <a href="/view/login/login.jsp"><p class="dropbtn">Log Out</p></a>
             </div>
 
 
