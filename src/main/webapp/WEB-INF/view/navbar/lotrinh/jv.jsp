@@ -15,6 +15,7 @@
 </head>
 <body>
 <h1> JAVA</h1>
+<a href="users?action=change_avatar"> Change avatar</a>
 
 </body>
 </html>
