@@ -144,8 +144,8 @@ public class UserController extends HttpServlet {
             User allInfo = userService.findById(user.getId());
             List<Role>roleList = new ArrayList<>(allInfo.getRoles());
            if (roleList.get(0).getName() == RoleName.ADMIN){
-               pageJSP = "WEB-INF/profile/profile.jsp";
-
+               pageJSP = "WEB-INF/view/home/homeAdmin.jsp";
+//               WEB-INF/view/home/homeAdmin.jsp
            }else {
                pageJSP = "WEB-INF/profile/profile-user.jsp";
            }
