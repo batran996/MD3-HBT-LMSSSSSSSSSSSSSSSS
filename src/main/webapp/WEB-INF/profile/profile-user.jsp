@@ -1,6 +1,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page='../boostrap/boostrap.jsp'>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<jsp:include page='../boostrap/boostrapUser.jsp'>
     <jsp:param name="articleId" value=""/>
 </jsp:include>
 <html>
@@ -8,8 +9,11 @@
     <title>Title</title>
 </head>
 <body>
-<h1>WELCOME : ${user.name}</h1>
-<a href="users?action=logout">LOG OUT</a>
-<a href="users?action=change_avatar"> Change avatar</a>
+
+<img src="/img/lms.jpg">
+
 </body>
+<jsp:include page='../boostrap/footer.jsp'>
+    <jsp:param name="articleId" value=""/>
+</jsp:include>
 </html>

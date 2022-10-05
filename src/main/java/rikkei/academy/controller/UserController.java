@@ -178,7 +178,7 @@ public class UserController extends HttpServlet {
         int id = user.getId();
         userService.changeAvatar(avatar, id);
         request.setAttribute("avatar", avatar);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/profile.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/account-profile.jsp");
         dispatcher.forward(request, response);
 
     }
