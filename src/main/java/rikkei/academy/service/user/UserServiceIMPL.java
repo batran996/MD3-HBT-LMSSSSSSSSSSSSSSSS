@@ -19,7 +19,7 @@ public class UserServiceIMPL implements IUserService{
     private final String INSERT_ROLE_ID_USER_ID = "INSERT INTO user_role(user_id,role_id) values (?,?);";
     private final String FIND_ALL_USERNAME = "SELECT username FROM users";
     private final String FIND_ALL_EMAIL = "SELECT email FROM users";
-    private final String FIND_BY_ID_USER = "SELECT name FROM users WHERE id=?;";
+    private final String FIND_BY_ID_USER = "SELECT * FROM users WHERE id=?;";
     private final String FIND_ROLE_BY_USER = "SELECT role_id FROM user_role WHERE user_id=?;";
     private final String FIND_BY_USERNAME_PASSWORD = "SELECT * FROM users WHERE username=?AND password=?";
     private final String CHANGE_AVATAR = "update users  set avatar = ? where id = ?";
@@ -117,7 +117,9 @@ public class UserServiceIMPL implements IUserService{
             ResultSet resultSet1 = preparedStatement.executeQuery();
             while (resultSet1.next()){
                 String name = resultSet1.getString("name");
-                user = new User(id,name,roles);
+                String avatar = resultSet1.getString("avatar");
+                String email = resultSet1.getString("email");
+                user = new User(id,name,roles,avatar,email);
                 return user;
             }
             connection.commit();
@@ -138,6 +140,7 @@ public class UserServiceIMPL implements IUserService{
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
                 user = findById(id);
+
                return user;
             }
         } catch (SQLException e) {

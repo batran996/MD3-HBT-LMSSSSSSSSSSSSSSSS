@@ -10,6 +10,10 @@ public class ConnectMySQL {
    private static final String USER = "root";
    private static final String PASS = "haphamlathe";
 
+<<<<<<< HEAD
+=======
+   private static final String PASS = "anhtung12";
+>>>>>>> 182491b25ebe480b61888ad104dc46ad0168e13a
 
    public static Connection getConnection(){
        try {
