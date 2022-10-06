@@ -47,8 +47,6 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-
         nav {
             display: flex;
             justify-content: space-around;
@@ -57,28 +55,22 @@
             background-color: #ffffff;
             font-family: 'Poppins', sans-serif;
         }
-
         .logo {
-
             color: rgb(226, 226, 226);
             text-transform: uppercase;
             letter-spacing: 5px;
             font-size: 15px;
         }
-
         .nav-links {
-
             display: flex;
             /*background-color: darkred;*/
             justify-content: space-around;
             width: 30%;
             margin-bottom: 0 !important;
         }
-
         .nav-links li {
             list-style: none;
         }
-
         .nav-links a {
             color: rgb(226, 226, 226);
             text-decoration: none;
@@ -86,12 +78,10 @@
             font-weight: bold;
             font-size: 14px;
         }
-
         .bugger {
             display: none;
             cursor: pointer;
         }
-
         .bugger div {
             width: 25px;
             height: 3px;
@@ -99,24 +89,19 @@
             margin: 5px;
             transition: all 0.3s ease;
         }
-
         @media screen and (max-width: 1024px) {
             .nav-links {
                 width: 60%;
             }
         }
-
         body{
             background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
         }
-
         @media screen and (max-width: 768px) {
             body {
                 overflow-x: hidden;
                 background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
-
             }
-
             .nav-links {
                 position: absolute;
                 right: 0;
@@ -130,20 +115,16 @@
                 transform: translateX(100%);
                 transition: transform 0.5s ease-in;
             }
-
             .nav-links li {
                 opacity: 0;
             }
-
             .bugger {
                 display: block;
             }
         }
-
         .nav-active {
             transform: translate(0%);
         }
-
         @keyframes navLinkFade {
             from {
                 opacity: 0;
@@ -154,20 +135,15 @@
                 transform: translate(0px);
             }
         }
-
         .toggle .line1 {
             transform: rotate(-45deg) translate(-5px, 6px);
         }
-
         .toggle .line2 {
             opacity: 0;
         }
-
         .toggle .line3 {
             transform: rotate(45deg) translate(-5px, -6px);
         }
-
-
         /*ssss*/
         .dropbtn {
             background-color: #ffffff;
@@ -176,12 +152,10 @@
             font-size: 16px;
             border: none;
         }
-
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
         .dropdown-content {
             display: none;
             position: absolute;
@@ -190,26 +164,21 @@
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
         .dropdown-content a:hover {
             background-color: #ddd;
         }
-
         .dropdown:hover .dropdown-content {
             display: block;
         }
-
         .dropdown:hover .dropbtn {
             background-color: #ffd200;
         }
-
         .anh1{
             display: flex;
             justify-content: center;
@@ -280,10 +249,8 @@
             const bugger = document.querySelector('.bugger');
             const nav = document.querySelector('.nav-links');
             const navLinks = document.querySelectorAll('.nav-links li');
-
             bugger.addEventListener('click', () => {
                 nav.classList.toggle('nav-active');
-
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';
