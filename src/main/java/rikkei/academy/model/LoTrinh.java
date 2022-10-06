@@ -1,14 +1,14 @@
 package rikkei.academy.model;
 
-public class Admin {
+public class LoTrinh {
     private int id;
     private String name;
 
-    public Admin(String name) {
+    public LoTrinh(String name) {
         this.name = name;
     }
 
-    public Admin(int id, String name) {
+    public LoTrinh(int id, String name) {
         this.id = id;
         this.name = name;
     }

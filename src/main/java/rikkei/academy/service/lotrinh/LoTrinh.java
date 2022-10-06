@@ -1,6 +1,4 @@
-package rikkei.academy.service.admin;
-
-import rikkei.academy.model.Admin;
+package rikkei.academy.service.lotrinh;
 
 import java.sql.SQLException;
 import java.sql.Connection;
@@ -11,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class UserDAO {
+public class LoTrinh {
     private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";
     private static final String USER = "root";
     private static final String PASS = "haphamlathe";
@@ -40,12 +38,12 @@ public class UserDAO {
     //
 
     //
-    public void insertAdmin(Admin admin) throws SQLException {
+    public void insertAdmin(rikkei.academy.model.LoTrinh loTrinh) throws SQLException {
         System.out.println(INSERT_ADMIN_SQL);
         // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ADMIN_SQL)) {
-            preparedStatement.setString(1, admin.getName());
+            preparedStatement.setString(1, loTrinh.getName());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -53,8 +51,8 @@ public class UserDAO {
         }
     }
 
-    public Admin selectAdmin(int id) {
-        Admin admin = null;
+    public rikkei.academy.model.LoTrinh selectAdmin(int id) {
+        rikkei.academy.model.LoTrinh loTrinh = null;
         // Step 1: Establishing a Connection
         try (Connection connection = getConnection();
              // Step 2:Create a statement using connection object
@@ -67,17 +65,17 @@ public class UserDAO {
             // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 String name = rs.getString("name");
-                admin = new Admin(id, name);
+                loTrinh = new rikkei.academy.model.LoTrinh(id, name);
             }
         } catch (SQLException e) {
             printSQLException(e);
         }
-        return admin;
+        return loTrinh;
     }
 
 
-    public List<Admin> selectAllUsers() {
-        List<Admin> adminList = new ArrayList<>();
+    public List<rikkei.academy.model.LoTrinh> selectAllUsers() {
+        List<rikkei.academy.model.LoTrinh> loTrinhList = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ADMIN);) {
             System.out.println(preparedStatement);
@@ -85,12 +83,12 @@ public class UserDAO {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                adminList.add(new Admin(id, name));
+                loTrinhList.add(new rikkei.academy.model.LoTrinh(id, name));
             }
         } catch (SQLException e) {
             printSQLException(e);
         }
-        return adminList;
+        return loTrinhList;
     }
 
 
@@ -104,12 +102,12 @@ public class UserDAO {
         return rowDeleted;
     }
 
-    public boolean updateAdmin(Admin admin) throws SQLException {
+    public boolean updateAdmin(rikkei.academy.model.LoTrinh loTrinh) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_ADMIN_SQL);) {
-            statement.setString(1, admin.getName());
-            statement.setInt(2, admin.getId());
+            statement.setString(1, loTrinh.getName());
+            statement.setInt(2, loTrinh.getId());
 
             rowUpdated = statement.executeUpdate() > 0;
         }

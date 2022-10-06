@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <style>
     .img {
       width: 20%;
@@ -86,19 +89,18 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/UserSl?action=home"><i class="bi bi-house-door"></i>Trang
+          <a class="nav-link active" aria-current="page" href="/UserSl?action=home"><ion-icon name="home"></ion-icon>Trang
             Chủ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-archive"></i>Lộ Trình</a>
+          <a class="nav-link" href="#"><ion-icon name="albums"></ion-icon>Lộ Trình</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-book"></i>Khóa Học</a>
+          <a class="nav-link" href="#"><ion-icon name="book"></ion-icon>Khóa Học</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-menu-button-wide"></i>Bảng Điều Khiển</a>
+          <a class="nav-link" href="#"><ion-icon name="apps-sharp"></ion-icon>Bảng Điều Khiển</a>
         </li>
-
       </ul>
     </div>
 
