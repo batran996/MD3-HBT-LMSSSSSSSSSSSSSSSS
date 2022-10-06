@@ -16,7 +16,7 @@
             <div class="col-lg-4">
                 <div class="card mb-4">
                     <div class="card-body text-center">
-                        <img width="150px" height="150px" style="border-radius: 50%" src="${user.avatar}" alt="">
+                        <img width="150px" height="150px" style="border-radius: 50%" src=${user.avatar}>
                         <h5 class="my-3">${user.name}</h5>
                         <p class="text-muted mb-1">Full Stack Developer</p>
                         <div class="d-flex justify-content-center mb-2">

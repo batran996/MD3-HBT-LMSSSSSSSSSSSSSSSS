@@ -182,5 +182,7 @@ public class UserController extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/account-profile.jsp");
         dispatcher.forward(request, response);
 
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/js.jsp");
+
     }
 }
