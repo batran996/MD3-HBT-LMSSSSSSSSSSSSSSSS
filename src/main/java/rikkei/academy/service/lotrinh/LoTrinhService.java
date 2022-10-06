@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LoTrinh {
+public class LoTrinhService {
     private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";
     private static final String USER = "root";
     private static final String PASS = "haphamlathe";
 
-    private static final String INSERT_ADMIN_SQL = "INSERT INTO lotrinh" + "  (name) VALUES " + " (?);";
+    private static final String INSERT_ADMIN_SQL = "INSERT INTO admin" + "  (name) VALUES " + " (?);";
 
-    private static final String SELECT_ADMIN_BY_ID = "select id,name from lotrinh where id =?";
-    private static final String SELECT_ALL_ADMIN = "select * from lotrinh";
-    private static final String DELETE_ADMIN_SQL = "delete from lotrinh where id = ?;";
-    private static final String UPDATE_ADMIN_SQL = "update lotrinh set name = ? where id = ?;";
+    private static final String SELECT_ADMIN_BY_ID = "select id,name from admin where id =?";
+    private static final String SELECT_ALL_ADMIN = "select * from admin";
+    private static final String DELETE_ADMIN_SQL = "delete from admin where id = ?;";
+    private static final String UPDATE_ADMIN_SQL = "update admin set name = ? where id = ?;";
 
     protected Connection getConnection() {
         Connection connection = null;
@@ -27,10 +27,8 @@ public class LoTrinh {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USER, PASS);
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return connection;
@@ -40,7 +38,6 @@ public class LoTrinh {
     //
     public void insertAdmin(rikkei.academy.model.LoTrinh loTrinh) throws SQLException {
         System.out.println(INSERT_ADMIN_SQL);
-        // try-with-resource statement will auto close the connection.
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ADMIN_SQL)) {
             preparedStatement.setString(1, loTrinh.getName());
@@ -53,16 +50,11 @@ public class LoTrinh {
 
     public rikkei.academy.model.LoTrinh selectAdmin(int id) {
         rikkei.academy.model.LoTrinh loTrinh = null;
-        // Step 1: Establishing a Connection
         try (Connection connection = getConnection();
-             // Step 2:Create a statement using connection object
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ADMIN_BY_ID);) {
             preparedStatement.setInt(1, id);
             System.out.println(preparedStatement);
-            // Step 3: Execute the query or update query
             ResultSet rs = preparedStatement.executeQuery();
-
-            // Step 4: Process the ResultSet object.
             while (rs.next()) {
                 String name = rs.getString("name");
                 loTrinh = new rikkei.academy.model.LoTrinh(id, name);
@@ -74,7 +66,7 @@ public class LoTrinh {
     }
 
 
-    public List<rikkei.academy.model.LoTrinh> selectAllUsers() {
+    public List<rikkei.academy.model.LoTrinh> selectAllAdmin() {
         List<rikkei.academy.model.LoTrinh> loTrinhList = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ADMIN);) {

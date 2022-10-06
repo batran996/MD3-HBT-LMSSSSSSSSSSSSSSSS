@@ -1,6 +1,6 @@
 package rikkei.academy.controller;
 
-import rikkei.academy.service.lotrinh.LoTrinh;
+import rikkei.academy.service.lotrinh.LoTrinhService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -13,10 +13,10 @@ import java.util.List;
 @WebServlet("/")
 public class LoTrinhServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private LoTrinh loTrinh;
+    private LoTrinhService loTrinhService;
 
     public void init() {
-        loTrinh = new LoTrinh();
+        loTrinhService = new LoTrinhService();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -57,8 +57,8 @@ public class LoTrinhServlet extends HttpServlet {
 
     private void listUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        List<rikkei.academy.model.LoTrinh> listUser = loTrinh.selectAllUsers();
-        request.setAttribute("listAdmin", listUser);
+        List<rikkei.academy.model.LoTrinh> listAdminn = loTrinhService.selectAllAdmin();
+        request.setAttribute("listAdmin", listAdminn);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/viewadmin/user-lisst.jsp");
         dispatcher.forward(request, response);
     }
@@ -72,7 +72,7 @@ public class LoTrinhServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        rikkei.academy.model.LoTrinh existingUser = loTrinh.selectAdmin(id);
+        rikkei.academy.model.LoTrinh existingUser = loTrinhService.selectAdmin(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/viewadmin/user-form.jsp");
         request.setAttribute("admin", existingUser);
         dispatcher.forward(request, response);
@@ -83,7 +83,7 @@ public class LoTrinhServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         String name = request.getParameter("name");
         rikkei.academy.model.LoTrinh newLoTrinh = new rikkei.academy.model.LoTrinh(name);
-        loTrinh.insertAdmin(newLoTrinh);
+        loTrinhService.insertAdmin(newLoTrinh);
         listUser(request, response);
     }
 
@@ -92,14 +92,14 @@ public class LoTrinhServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         rikkei.academy.model.LoTrinh list = new rikkei.academy.model.LoTrinh(id, name);
-        loTrinh.updateAdmin(list);
+        loTrinhService.updateAdmin(list);
         listUser(request, response);
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        loTrinh.deleteAdmin(id);
+        loTrinhService.deleteAdmin(id);
         response.sendRedirect("list");
 
     }
