@@ -80,130 +80,132 @@
             margin: 5px;
             transition: all 0.3s ease;
         }
-
+        body {
+            background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+        }
         @media screen and (max-width: 1024px) {
             .nav-links {
                 width: 60%;
             }
-
-            /*<<<<<<< HEAD*/
-            /*        body {*/
-            /*=======*/
-            /*        }*/
             body {
-                /*>>>>>>> ha*/
                 background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
                 background-size: cover;
                 width: 100%;
                 height: 100vh;
                 background-position: center;
             }
+        }
 
-            @media screen and (max-width: 768px) {
-                body {
-                    overflow-x: hidden;
-                    background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
-                }
-
-                .nav-links {
-                    position: absolute;
-                    right: 0;
-                    height: 92vh;
-                    top: 8vh;
-                    background-color: #ffffff;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    width: 50%;
-                    transform: translateX(100%);
-                    transition: transform 0.5s ease-in;
-                }
-
-                .nav-links li {
-                    opacity: 0;
-                }
-
-                .bugger {
-                    display: block;
-                }
+        @media screen and (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+                background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
             }
-            .nav-active {
-                transform: translate(0%);
+            .nav-links {
+                position: absolute;
+                right: 0;
+                height: 92vh;
+                top: 8vh;
+                background-color: #ffffff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 50%;
+                transform: translateX(100%);
+                transition: transform 0.5s ease-in;
             }
 
-            @keyframes navLinkFade {
-                from {
-                    opacity: 0;
-                    transform: translate(50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translate(0px);
-                }
-            }
-            .toggle .line1 {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .toggle .line2 {
+            .nav-links li {
                 opacity: 0;
             }
 
-            .toggle .line3 {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            /*ssss*/
-            .dropbtn {
-                background-color: #ffffff;
-                color: #ff0000;
-                padding: 16px;
-                font-size: 13px;
-                border: none;
-            }
-
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                z-index: 1;
-            }
-
-            .dropdown-content a {
-                color: #ff0000;
-                padding: 12px 16px;
-                text-decoration: none;
+            .bugger {
                 display: block;
-            }
-
-            .dropdown-content a:hover {
-                background-color: rgb(255, 243, 0);
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-content:hover {
-                display: block;
-            }
-
-            .dropdown:hover .dropbtn {
-                background-color: #ffd200;
-            }
-
-            .anh1 {
-                display: flex;
-                justify-content: center;
             }
         }
+
+        .nav-active {
+            transform: translate(0%);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translate(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(0px);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /*ssss*/
+        .dropbtn {
+            background-color: #ffffff;
+            color: #ff0000;
+            padding: 16px;
+            font-size: 13px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #ff0000;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgb(255, 243, 0);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content:hover {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #ffd200;
+        }
+
+        .anh1 {
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
     <style>
         .dropdown-content:hover {
@@ -234,11 +236,11 @@
             <%--            </div>--%>
 
             <div class="dropdown">
-                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>
                 <p class="dropbtn">Lo trinh</p>
-                <div class="dropdown-content" style="display: none">
+                <div class="dropdown-content">
                     <a href="/AdminServlet?action=">CRUD LOTRINH</a>
                     <a href="/BaiDoc?action=">CRUD MODULE</a>
+
                 </div>
             </div>
 
