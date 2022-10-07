@@ -1,4 +1,3 @@
-
 <%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 <%--<jsp:include page='../boostrap/boostrap.jsp'>--%>
 <%--    <jsp:param name="articleId" value=""/>--%>
@@ -21,7 +20,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>admin</title>
@@ -104,7 +103,7 @@
             }
         }
 
-        body{
+        body {
             background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
         }
 
@@ -212,7 +211,7 @@
     <input type="hidden" name="action" value="home">
     <nav>
         <div class="logo">
-            <h1>WELCOME : ${user.name}</h1>
+            <h1 style="color: darkred">WELCOME : ${user.name}</h1>
         </div>
         <ul class="nav-links">
 
@@ -220,22 +219,16 @@
                 <a href="/HomeServlet?action=goHome"><p class="dropbtn">Trang Chu</p></a>
             </div>
 
-            <div class="dropdown">
-                <p class="dropbtn">Khoa Hoc</p>
-                <div class="dropdown-content">
-                    <a href="/HomeServlet?action=khoa1">TRAINING PROGRAM PREPARATION</a>
-                    <a href="/HomeServlet?action=khoa2">TRAINING PROGRAM PREPARATION WITH JAVASCRIPT</a>
-                    <a href="/HomeServlet?action=khoa3">ADVANCED PROGRAMMING WITH JAVA</a>
-                </div>
-            </div>
 
             <div class="dropdown">
-                <p class="dropbtn">Lo trinh</p>
-                <div class="dropdown-content">
-                    <a href="/HomeServlet?action=jv">Fullstack Java 6 tháng</a>
-                    <a href="/HomeServlet?action=js">Fullstack Javascript 6 tháng</a>
-                </div>
+                <a href="/users?action=user"><p class="dropbtn">User</p></a>
             </div>
+
+
+            <div class="dropdown">
+                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>
+            </div>
+
 
             <div class="dropdown">
                 <p class="dropbtn">Bang Dieu Khien</p>
@@ -243,7 +236,6 @@
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
-
                 </div>
             </div>
 
