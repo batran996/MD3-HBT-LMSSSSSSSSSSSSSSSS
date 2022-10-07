@@ -63,8 +63,8 @@ public class ModuleServiceIMPL implements IModuleService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int id_lotrinh = resultSet.getInt("id_lotrinh");
-                String name = resultSet.getString("name_module");
-                Module module = new Module(id, id_lotrinh, name);
+                String name_module = resultSet.getString("name_module");
+                Module module = new Module(id, id_lotrinh, name_module);
                 moduleList.add(module);
             }
         } catch (SQLException e) {

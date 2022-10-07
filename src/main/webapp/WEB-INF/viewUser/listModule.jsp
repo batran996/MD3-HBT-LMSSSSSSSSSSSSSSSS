@@ -16,6 +16,7 @@
 </head>
 <body>
 
+<form method="get">
     <table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
         <tr class="table-warning">
             <th scope="col">ID</th>
@@ -23,15 +24,16 @@
             <th scope="col">Tên Module</th>
         </tr>
 
-            <c:forEach items='${requestScope["lotrinhJava"]}' var ="lt1">
-                <tr>
-                    <td>${lt1.id}</td>
-                    <td>${lt1.id_lotrinh}</td>
-                    <td>${lt1.name_module}</td>
-                </tr>
-            </c:forEach>
+        <c:forEach items='${requestScope["listModule"]}' var="lt1">
+            <tr>
+                <td>${lt1.id}</td>
+                <td>${lt1.id_lotrinh}</td>
+                <td><a href="/UserSl?action=showBaiDoc&id=${lt1.id}">${lt1.name_module}</a></td>
+            </tr>
+        </c:forEach>
 
     </table>
+</form>
 </body>
 </html>
 <jsp:include page='../boostrap/footer.jsp'>

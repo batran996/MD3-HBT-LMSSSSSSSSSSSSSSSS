@@ -11,7 +11,7 @@
 <body>
 
 <img src="/img/lms.jpg">
-<form method="get" action="/UserSl?action=module1&id=${lotrinh.id}" >
+<form method="get">
     <table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
         <tr class="table-warning">
             <th scope="col">ID</th>
@@ -20,8 +20,8 @@
 
         <c:forEach var="lotrinh" items='${requestScope["listLoTrinh"]}'>
             <tr class="table-danger">
-                <td><a href="/UserSl?action=module1&id=${lotrinh.id}" name="id">${lotrinh.id}</a></td>
-                <td><a href="/UserSl?action=module1&id=${lotrinh.id}" name="lotrinh">${lotrinh.name}</a></td>
+                <td><a href="/UserSl?action=showModule&id=${lotrinh.id}">${lotrinh.id}</a></td>
+                <td><a href="/UserSl?action=showModule&id=${lotrinh.id}">${lotrinh.name}</a></td>
             </tr>
         </c:forEach>
 
