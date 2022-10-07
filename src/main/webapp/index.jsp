@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
 <head>
-    <title>Hom Login</title>
+    <title>Home Login</title>
 </head>
 <body>
 
@@ -53,7 +53,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">LMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -69,9 +70,7 @@
                             <a class="nav-link" href=users?action=login>Login</a>
                         </li>
                     </c:if>
-
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -86,10 +85,13 @@
             <div><h4>Chọn Register để đăng ký tài khoản mới</h4></div>
             <div><h4>Chọn Login nếu bạn đã có tài khoản</h4></div>
             <h1 style="text-align: center;color: black">FUN-----------------------------FUNCTION</h1>
-            <div><h2 style="color: red ; text-align: center">Ước mong của tui là có 1 nơi nào đó có thể thực hiện câu SQL này của tôi:
+            <div><h2 style="color: red ; text-align: center">Ước mong của tui là có 1 nơi nào đó có thể thực hiện câu
+                SQL này của tôi:
                 SELECT Name, Phone, Address FROM World.Girls WHERE age>18 and age <28 and no_BF='true'</h2></div>
-            <div><h2 style="color: black ; text-align: center">Đằng sau 1 lập trình viên thành công là một người bạn gái... không tồn tại.</h2></div>
-            <div><h2 style="color: crimson ; text-align: center">PM: Vì sao hôm qua cậu lấy cái ghế phang vào chú tester phòng bên?
+            <div><h2 style="color: black ; text-align: center">Đằng sau 1 lập trình viên thành công là một người bạn
+                gái... không tồn tại.</h2></div>
+            <div><h2 style="color: crimson ; text-align: center">PM: Vì sao hôm qua cậu lấy cái ghế phang vào chú tester
+                phòng bên?
                 Dev: Mấy anh thông cảm, dạo này OT nhiều quá em không đủ sức cầm cái bàn...</h2></div>
         </div>
     </div>

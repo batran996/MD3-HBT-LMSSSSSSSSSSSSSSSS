@@ -231,6 +231,7 @@ public class UserController extends HttpServlet {
             } else {
                 pageJSP = "WEB-INF/profile/profile-user.jsp";
             }
+
         } else {
             pageJSP = "WEB-INF/form-login/login.jsp";
         }
@@ -260,7 +261,11 @@ public class UserController extends HttpServlet {
         int id = user.getId();
         userService.changeAvatar(avatar, id);
         request.setAttribute("avatar", avatar);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/js.jsp");
+        session.setAttribute("avatar", avatar);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/account-profile.jsp");
+        dispatcher.forward(request, response);
+
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/js.jsp");
 
 
     }

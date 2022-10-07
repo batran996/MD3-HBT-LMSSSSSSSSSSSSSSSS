@@ -107,7 +107,9 @@ public class HomeServlet extends HttpServlet {
 
     //HOME
     private void formHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/profile/profile.jsp");
+
         requestDispatcher.forward(request, response);
     }
 

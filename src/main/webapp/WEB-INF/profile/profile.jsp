@@ -1,29 +1,9 @@
-<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
-<%--<jsp:include page='../boostrap/boostrap.jsp'>--%>
-<%--    <jsp:param name="articleId" value=""/>--%>
-<%--</jsp:include>--%>
-<%--<html>--%>
-<%--<head>--%>
-<%--    <title>Title</title>--%>
-<%--</head>--%>
-<%--<body>--%>
-<%--<h1>WELCOME : ${user.name}</h1>--%>
-<%--<a href="users?action=logout">LOG OUT</a>--%>
-<%--<a href="users?action=change_avatar"> Change avatar</a>--%>
-<%--</body>--%>
-<%--</html>--%>
-<%--
-  Created by IntelliJ IDEA.
-  User: doquyen7796
-  Date: 29/09/2022
-  Time: 22:26
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <title>admin</title>
+    <title>loTrinh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Poppins:ital,wght@0,700;1,300&display=swap"
@@ -39,6 +19,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Roboto:wght@700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -46,24 +29,24 @@
             padding: 0;
             box-sizing: border-box;
         }
-
-
+        .dropdown-content:hover{
+            display: block;
+        }
         nav {
             display: flex;
             justify-content: space-around;
             align-items: center;
             min-height: 8vh;
             background-color: #ffffff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Alkalami', serif;
+            font-family: 'Roboto', sans-serif;
         }
-
         .logo {
             color: rgb(226, 226, 226);
             text-transform: uppercase;
             letter-spacing: 5px;
             font-size: 15px;
         }
-
         .nav-links {
             display: flex;
             /*background-color: darkred;*/
@@ -71,11 +54,9 @@
             width: 30%;
             margin-bottom: 0 !important;
         }
-
         .nav-links li {
             list-style: none;
         }
-
         .nav-links a {
             color: rgb(226, 226, 226);
             text-decoration: none;
@@ -83,12 +64,10 @@
             font-weight: bold;
             font-size: 14px;
         }
-
         .bugger {
             display: none;
             cursor: pointer;
         }
-
         .bugger div {
             width: 25px;
             height: 3px;
@@ -101,115 +80,121 @@
             .nav-links {
                 width: 60%;
             }
-        }
 
-        body {
-            background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
-        }
-
-        @media screen and (max-width: 768px) {
+            /*<<<<<<< HEAD*/
+            /*        body {*/
+            /*=======*/
+            /*        }*/
             body {
-                overflow-x: hidden;
+                /*>>>>>>> ha*/
+                background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+                background-size: cover;
+                width: 100%;
+                height: 100vh;
+                background-position: center;
             }
-
-            .nav-links {
-                position: absolute;
-                right: 0;
-                height: 92vh;
-                top: 8vh;
-                background-color: #ffffff;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 50%;
-                transform: translateX(100%);
-                transition: transform 0.5s ease-in;
+            @media screen and (max-width: 768px) {
+                body {
+                    overflow-x: hidden;
+                    background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+                }
+                .nav-links {
+                    position: absolute;
+                    right: 0;
+                    height: 92vh;
+                    top: 8vh;
+                    background-color: #ffffff;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 50%;
+                    transform: translateX(100%);
+                    transition: transform 0.5s ease-in;
+                }
+                .nav-links li {
+                    opacity: 0;
+                }
+                .bugger {
+                    display: block;
+                }
             }
-
-            .nav-links li {
+            .nav-active {
+                transform: translate(0%);
+            }
+            @keyframes navLinkFade {
+                from {
+                    opacity: 0;
+                    transform: translate(50px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translate(0px);
+                }
+            }
+            .toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .toggle .line2 {
                 opacity: 0;
             }
-
-            .bugger {
+            .toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            /*ssss*/
+            .dropbtn {
+                background-color: #ffffff;
+                color: #ff0000;
+                padding: 16px;
+                font-size: 13px;
+                border: none;
+            }
+            .dropdown {
+                position: relative;
+                display: inline-block;
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f1f1f1;
+                min-width: 160px;
+                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                color: #ff0000;
+                padding: 12px 16px;
+                text-decoration: none;
                 display: block;
             }
-        }
-
-        .nav-active {
-            transform: translate(0%);
-        }
-
-        @keyframes navLinkFade {
-            from {
-                opacity: 0;
-                transform: translate(50px);
+            .dropdown-content a:hover {
+                background-color: rgb(255, 243, 0);
             }
-            to {
-                opacity: 1;
-                transform: translate(0px);
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropdown-content:hover{
+               display: block;
+            }
+            .dropdown:hover .dropbtn {
+                background-color: #ffd200;
+            }
+            .anh1 {
+                display: flex;
+                justify-content: center;
             }
         }
-
-        .toggle .line1 {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .toggle .line2 {
-            opacity: 0;
-        }
-
-        .toggle .line3 {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-
-        /*ssss*/
-        .dropbtn {
-            background-color: #ffffff;
-            color: #ff0000;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
+    </style>
+    <style>
+        .dropdown-content:hover{
             display: block;
         }
-
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #ffd200;
-        }
-
     </style>
 <body>
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
+        <img class="anh1" style="width: 5%" src="/img/LOGO.png" alt="">
+
         <div class="logo">
             <h1 style="color: darkred">WELCOME : ${user.name}</h1>
         </div>
@@ -220,13 +205,21 @@
             </div>
 
 
-            <div class="dropdown">
+<%--            <div class="dropdown">--%>
+<%--<<<<<<< HEAD--%>
                 <a href="/users?action=user"><p class="dropbtn">User</p></a>
-            </div>
+<%--&lt;%&ndash;            </div>&ndash;%&gt;--%>
 
 
-            <div class="dropdown">
+<%--            <div class="dropdown">--%>
                 <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>
+<%--=======--%>
+<%--                <p class="dropbtn">Lo trinh</p>--%>
+<%--                <div class="dropdown-content" style="display: none" >--%>
+<%--                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>--%>
+<%--                    <a href="/BaiDoc?action=">CRUD MODULE</a>--%>
+<%--                </div>--%>
+<%-->>>>>>> ha--%>
             </div>
 
 
@@ -239,9 +232,12 @@
                 </div>
             </div>
 
+
             <div class="dropdown">
                 <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>
             </div>
+
+
 
 
         </ul>
@@ -257,10 +253,8 @@
             const bugger = document.querySelector('.bugger');
             const nav = document.querySelector('.nav-links');
             const navLinks = document.querySelectorAll('.nav-links li');
-
             bugger.addEventListener('click', () => {
                 nav.classList.toggle('nav-active');
-
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';
