@@ -3,7 +3,7 @@ package rikkei.academy.model;
 public class Module {
     private int id;
     private int id_lotrinh;
-    String name;
+    String name_module;
 
     public Module() {
     }
@@ -11,7 +11,7 @@ public class Module {
     public Module(int id, int id_lotrinh, String name) {
         this.id = id;
         this.id_lotrinh = id_lotrinh;
-        this.name = name;
+        this.name_module = name;
     }
 
     public int getId() {
@@ -30,11 +30,11 @@ public class Module {
         this.id_lotrinh = id_lotrinh;
     }
 
-    public String getName() {
-        return name;
+    public String getName_module() {
+        return name_module;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_module(String name_module) {
+        this.name_module = name_module;
     }
 }

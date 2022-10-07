@@ -11,6 +11,7 @@ public class ConnectMySQL {
 
    private static final String PASS = "anhtung12";
 
+
    public static Connection getConnection(){
        try {
            Class.forName("com.mysql.jdbc.Driver");

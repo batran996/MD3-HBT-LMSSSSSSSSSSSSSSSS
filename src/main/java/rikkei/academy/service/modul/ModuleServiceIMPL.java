@@ -12,9 +12,8 @@ import java.util.List;
 
 public class ModuleServiceIMPL implements IModuleService {
     private Connection connection = ConnectMySQL.getConnection();
-    private static String LIST_MODULE = "SELECT * FROM module;";
-    private static String LIST_MODULE_LOTRINH1 = "SELECT * FROM module WHERE id_lotrinh = 1 ;";
-    private static String LIST_MODULE_LOTRINH2 = "SELECT * FROM module WHERE id_lotrinh = 2 ;";
+    private static String LIST_MODULE = "SELECT * FROM module WHERE id_lotrinh = ?;";
+
     private static String MODULE_BY_ID = "SELECT * FROM module WHERE name = ?";
 
     @Override
@@ -26,7 +25,7 @@ public class ModuleServiceIMPL implements IModuleService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int id_lotrinh = resultSet.getInt("id_lotrinh");
-                String name = resultSet.getString("name");
+                String name = resultSet.getString("name_module");
                 Module module = new Module(id, id_lotrinh, name);
                 moduleList.add(module);
             }
@@ -55,22 +54,24 @@ public class ModuleServiceIMPL implements IModuleService {
     }
 
     @Override
-    public List<Module> findAllLoTrinh1() {
-        List<Module> moduleList1 = new ArrayList<>();
+    public List<Module> findByLoTrinh(int idLoTrinh) {
+        List<Module> moduleList = new ArrayList<>();
         try {
-            PreparedStatement statement = connection.prepareStatement(LIST_MODULE_LOTRINH1);
+            PreparedStatement statement = connection.prepareStatement(LIST_MODULE);
+            statement.setInt(1,idLoTrinh);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int id_lotrinh = resultSet.getInt("id_lotrinh");
                 String name = resultSet.getString("name_module");
                 Module module = new Module(id, id_lotrinh, name);
-                moduleList1.add(module);
+                moduleList.add(module);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return moduleList1;
+        return moduleList;
     }
+
 
 }

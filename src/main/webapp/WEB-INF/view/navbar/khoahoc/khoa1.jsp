@@ -11,9 +11,9 @@
 </jsp:include>
 <html>
 <head>
-    <title>Title</title>
+    <title>Khoa hoc 1</title>
 </head>
 <body>
-<h1>TRAINING PROGRAM PREPARATION</h1>
+<h1>khoa hoc so 1 </h1>
 </body>
 </html>

@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface IModuleService extends IGenericUser {
     Module findByName(String name);
-    List<Module> findAllLoTrinh1();
+    List<Module> findByLoTrinh(int id);
 
 }

@@ -2,32 +2,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <jsp:include page='../boostrap/boostrapUser.jsp'>
-  <jsp:param name="articleId" value=""/>
+    <jsp:param name="articleId" value=""/>
 </jsp:include>
 <html>
 <head>
-  <title>Title</title>
+    <title>Title</title>
 </head>
 <body>
 
 <img src="/img/lms.jpg">
-<table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
-  <tr class="table-warning">
-    <th scope="col">ID</th>
-    <th scope="col">Tên Lộ Trình</th>
-  </tr>
+<form method="get" action="/UserSl?action=module1&id=${lotrinh.id}" >
+    <table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
+        <tr class="table-warning">
+            <th scope="col">ID</th>
+            <th scope="col">Tên Lộ Trình</th>
+        </tr>
 
-  <c:forEach var="lotrinh" items='${requestScope["listLoTrinh"]}'>
-    <tr class="table-danger">
-      <td><a href="/UserSl?action=module1">${lotrinh.id}</a></td>
-      <td><a href="" >${lotrinh.name}</a></td>
-    </tr>
-  </c:forEach>
+        <c:forEach var="lotrinh" items='${requestScope["listLoTrinh"]}'>
+            <tr class="table-danger">
+                <td><a href="/UserSl?action=module1&id=${lotrinh.id}" name="id">${lotrinh.id}</a></td>
+                <td><a href="/UserSl?action=module1&id=${lotrinh.id}" name="lotrinh">${lotrinh.name}</a></td>
+            </tr>
+        </c:forEach>
 
-</table>
+    </table>
+</form>
+
 
 </body>
 <jsp:include page='../boostrap/footer.jsp'>
-  <jsp:param name="articleId" value=""/>
+    <jsp:param name="articleId" value=""/>
 </jsp:include>
 </html>

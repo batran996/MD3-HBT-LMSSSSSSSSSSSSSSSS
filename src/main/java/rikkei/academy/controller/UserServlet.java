@@ -43,9 +43,10 @@ public class UserServlet extends HttpServlet {
     }
 
     private void showListLoTrinh1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Module> moduleList1 = moduleService.findAllLoTrinh1();
-        request.setAttribute("moduleList1", moduleList1);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/module1.jsp");
+        int idLoTrinh = Integer.parseInt(request.getParameter("id"));
+        List<Module> lotrinhJava = moduleService.findByLoTrinh(idLoTrinh);
+        request.setAttribute("lotrinhJava", lotrinhJava);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/lotrinhJava.jsp");
         dispatcher.forward(request, response);
     }
 
