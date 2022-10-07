@@ -47,7 +47,6 @@
         </tr>
     </table>
 <button type="submit"  > submit</button>
-  <a href="">Delete</a>
 </form>
 </body>
 </html>

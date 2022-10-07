@@ -204,6 +204,7 @@ public class UserServiceIMPL implements IUserService {
     @Override
     public void updateUser(int id, int role) throws SQLException {
         try {
+            connection.setAutoCommit(false);
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_ROLE);
             preparedStatement.setInt(1, role);
             preparedStatement.setInt(2, id);

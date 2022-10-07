@@ -118,6 +118,7 @@ public class UserController extends HttpServlet {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
+                break;
             case "delete_user":
                 actionDeleteUser(request,response);
                 break;
