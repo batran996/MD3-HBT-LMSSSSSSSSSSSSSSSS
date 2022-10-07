@@ -6,8 +6,11 @@
     <title>Delete</title>
 </head>
 <body>
+<a href="/HomeServlet?action=goHome"> <p>Back Home</p></a>
 <form method="post" action="/users?action=delete_user">
-    <table border="1">
+    <table border="1"><c:if test="${requestScope['message'] != null}">
+        <p style="color: #f10238">${requestScope['message']}</p>
+    </c:if>
         <tr>
             <th>ID</th>
             <th>NAME</th>
@@ -30,7 +33,7 @@
             </c:forEach>
         </tr>
     </table>
-    <button type="submit"  > delete</button>
+    <button type="submit" > delete</button>
 </form>
 </body>
 </html>

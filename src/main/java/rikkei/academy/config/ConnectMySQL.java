@@ -14,12 +14,12 @@ public class ConnectMySQL {
        try {
            Class.forName("com.mysql.jdbc.Driver");
            connection = DriverManager.getConnection(URL,USER,PASS);
-           System.out.println("KET NOI THANH CONG");
+
        } catch (ClassNotFoundException e) {
-           System.out.println("THAT BAI");
+
            throw new RuntimeException(e);
        } catch (SQLException e) {
-           System.out.println("That bai");
+
            throw new RuntimeException(e);
        }
        return connection;

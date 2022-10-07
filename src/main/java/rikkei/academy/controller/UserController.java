@@ -129,6 +129,7 @@ public class UserController extends HttpServlet {
     private void actionDeleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         userService.deleteuser(id);
+        request.setAttribute("message","delete success!");
         RequestDispatcher requestDispatcher= request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
         requestDispatcher.forward(request,response);
     }
@@ -142,7 +143,8 @@ public class UserController extends HttpServlet {
             role = String.valueOf(1);
         }
          userService.updateUser( id, Integer.parseInt(role));
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
+        request.setAttribute("message","edit success!");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/edit_user/edit_user.jsp");
         requestDispatcher.forward(request,response);
 
 
