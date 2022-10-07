@@ -215,6 +215,8 @@
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
                     <a href="/AdminServlet?action=">CRUD LOTRINH</a>
+                    <a href="/BaiDoc?action=">CRUD MODULE</a>
+
                 </div>
             </div>
 

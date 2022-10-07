@@ -20,7 +20,7 @@
 
         <ul class="navbar-nav">
             <li><a href="<%=request.getContextPath()%>/list"
-                   class="nav-link">ADMIN Lo Trinh</a></li>
+                   class="nav-link">ADMIN Bai Doc</a></li>
         </ul>
     </nav>
 </header>
@@ -28,31 +28,31 @@
 <div class="container col-md-5">
     <div class="card">
         <div class="card-body">
-            <c:if test="${loTrinh != null}">
-            <form action="update" method="post">
+            <c:if test="${baiDoc != null}">
+            <form action="/BaiDoc?action=update" method="post">
                 </c:if>
-                <c:if test="${loTrinh == null}">
-                <form action="insert" method="post">
+                <c:if test="${baiDoc == null}">
+                <form action="/BaiDoc?action=insert" method="post">
                     </c:if>
 
                     <caption>
                         <h2>
-                            <c:if test="${loTrinh != null}">
-                                Sua Lo Trinh
+                            <c:if test="${baiDoc != null}">
+                                Sua Bai Doc
                             </c:if>
-                            <c:if test="${loTrinh == null}">
-                                Them Lo Trinh
+                            <c:if test="${baiDoc == null}">
+                                Them Bai Doc
                             </c:if>
                         </h2>
                     </caption>
-                    <c:if test="${loTrinh != null}">
-                        <input type="hidden" name="id" value="<c:out value='${loTrinh.id}' />"/>
+                    <c:if test="${baiDoc != null}">
+                        <input type="hidden" name="id" value="<c:out value='${baiDoc.id}' />"/>
                     </c:if>
 
                     <fieldset class="form-group">
-                        <label> Ten Lo Trinh</label> <input type="text"
-                                                            value="<c:out value='${loTrinh.name}'/>" class="form-control"
-                                                            name="name" required="required">
+                        <label> Ten Bai Doc</label> <input type="text"
+                                                            value="<c:out value='${baiDoc.name}'/>" class="form-control"
+                                                            name="name_baidoc" required="required">
                     </fieldset>
                     <button type="submit" class="btn btn-success">Save</button>
                 </form>

@@ -72,8 +72,8 @@ public class LoTrinhServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        rikkei.academy.model.LoTrinh existingUser = loTrinhService.selectAdmin(id);
-        request.setAttribute("loTrinh", existingUser);
+        rikkei.academy.model.LoTrinh existingLoTrinh = loTrinhService.selectAdmin(id);
+        request.setAttribute("loTrinh", existingLoTrinh);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/viewlotrinh/lotrinh-form.jsp");
         dispatcher.forward(request, response);
 
