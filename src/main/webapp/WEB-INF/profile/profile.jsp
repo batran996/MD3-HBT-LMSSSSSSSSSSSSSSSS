@@ -93,9 +93,17 @@
             .nav-links {
                 width: 60%;
             }
+
         }
         body{
             background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
+            background-size: cover;
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            /*display: flex;*/
+            /*flex-direction: column;*/
+            /*justify-content: center;*/
         }
         @media screen and (max-width: 768px) {
             body {

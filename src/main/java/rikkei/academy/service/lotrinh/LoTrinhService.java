@@ -1,5 +1,7 @@
 package rikkei.academy.service.lotrinh;
 
+import rikkei.academy.model.LoTrinh;
+
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,12 +16,12 @@ public class LoTrinhService {
     private static final String USER = "root";
     private static final String PASS = "haphamlathe";
 
-    private static final String INSERT_ADMIN_SQL = "INSERT INTO admin" + "  (name) VALUES " + " (?);";
+    private static final String INSERT_ADMIN_SQL = "INSERT INTO lotrinh" + "  (name) VALUES " + " (?);";
 
-    private static final String SELECT_ADMIN_BY_ID = "select id,name from admin where id =?";
-    private static final String SELECT_ALL_ADMIN = "select * from admin";
-    private static final String DELETE_ADMIN_SQL = "delete from admin where id = ?;";
-    private static final String UPDATE_ADMIN_SQL = "update admin set name = ? where id = ?;";
+    private static final String SELECT_ADMIN_BY_ID = "select id,name from lotrinh where id =?";
+    private static final String SELECT_ALL_ADMIN = "select * from lotrinh";
+    private static final String DELETE_ADMIN_SQL = "delete from lotrinh where id = ?;";
+    private static final String UPDATE_ADMIN_SQL = "update lotrinh set name = ? where id = ?;";
 
     protected Connection getConnection() {
         Connection connection = null;
@@ -33,9 +35,7 @@ public class LoTrinhService {
         }
         return connection;
     }
-    //
 
-    //
     public void insertAdmin(rikkei.academy.model.LoTrinh loTrinh) throws SQLException {
         System.out.println(INSERT_ADMIN_SQL);
         try (Connection connection = getConnection();
@@ -48,8 +48,8 @@ public class LoTrinhService {
         }
     }
 
-    public rikkei.academy.model.LoTrinh selectAdmin(int id) {
-        rikkei.academy.model.LoTrinh loTrinh = null;
+    public LoTrinh selectAdmin(int id) {
+        LoTrinh loTrinh = null;
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ADMIN_BY_ID);) {
             preparedStatement.setInt(1, id);
@@ -57,7 +57,7 @@ public class LoTrinhService {
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 String name = rs.getString("name");
-                loTrinh = new rikkei.academy.model.LoTrinh(id, name);
+                loTrinh = new LoTrinh(id, name);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -66,8 +66,8 @@ public class LoTrinhService {
     }
 
 
-    public List<rikkei.academy.model.LoTrinh> selectAllAdmin() {
-        List<rikkei.academy.model.LoTrinh> loTrinhList = new ArrayList<>();
+    public List<LoTrinh> selectAllAdmin() {
+        List<LoTrinh> loTrinhList = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ADMIN);) {
             System.out.println(preparedStatement);
@@ -75,7 +75,7 @@ public class LoTrinhService {
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                loTrinhList.add(new rikkei.academy.model.LoTrinh(id, name));
+                loTrinhList.add(new LoTrinh(id, name));
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -94,7 +94,7 @@ public class LoTrinhService {
         return rowDeleted;
     }
 
-    public boolean updateAdmin(rikkei.academy.model.LoTrinh loTrinh) throws SQLException {
+    public boolean updateAdmin(LoTrinh loTrinh) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_ADMIN_SQL);) {
