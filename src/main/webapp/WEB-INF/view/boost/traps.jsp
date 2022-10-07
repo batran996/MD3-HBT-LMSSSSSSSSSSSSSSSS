@@ -198,19 +198,11 @@
         </div>
         <ul class="nav-links">
 
+            </div>
+
             <div class="dropdown">
                 <a href="/HomeServlet?action=goHome"><p class="dropbtn">Trang Chu</p></a>
             </div>
-
-            <div class="dropdown">
-                <p class="dropbtn">Khoa Hoc</p>
-                <div class="dropdown-content">
-                    <a href="/HomeServlet?action=khoa1">TRAINING PROGRAM PREPARATION</a>
-                    <a href="/HomeServlet?action=khoa2">TRAINING PROGRAM PREPARATION WITH JAVASCRIPT</a>
-                    <a href="/HomeServlet?action=khoa3">ADVANCED PROGRAMMING WITH JAVA</a>
-                </div>
-            </div>
-
             <div class="dropdown">
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
@@ -222,8 +214,6 @@
             <div class="dropdown">
                 <p class="dropbtn">Bang Dieu Khien</p>
                 <div class="dropdown-content">
-                    <a href="/HomeServlet?action=lotrinh">Lo trinh </a>
-                    <a href="/HomeServlet?action=khoahoc">Khoa hoc</a>
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
