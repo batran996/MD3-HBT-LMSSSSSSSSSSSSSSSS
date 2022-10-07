@@ -16,13 +16,13 @@ public class LoTrinhService {
     private static final String USER = "root";
     private static final String PASS = "haphamlathe";
 
+
     private static final String INSERT_ADMIN_SQL = "INSERT INTO lotrinh" + "  (name) VALUES " + " (?);";
 
     private static final String SELECT_ADMIN_BY_ID = "select id,name from lotrinh where id =?";
     private static final String SELECT_ALL_ADMIN = "select * from lotrinh";
     private static final String DELETE_ADMIN_SQL = "delete from lotrinh where id = ?;";
     private static final String UPDATE_ADMIN_SQL = "update lotrinh set name = ? where id = ?;";
-
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -121,5 +121,7 @@ public class LoTrinhService {
             }
         }
     }
+
+
 
 }

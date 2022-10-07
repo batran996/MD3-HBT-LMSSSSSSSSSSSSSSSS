@@ -27,8 +27,6 @@
 <br>
 
 <div class="row">
-    <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
-
     <div class="container">
         <h3 class="text-center">Menu Lo Trinh</h3>
         <hr>
@@ -46,14 +44,14 @@
             </thead>
             <tbody>
             <!--   for (Todo todo: todos) {  -->
-            <c:forEach var="loTrinh" items="${listAdmin}">
+            <c:forEach var="baiDoc" items="${listAdmin}">
 
                 <tr>
-                    <td><c:out value="${loTrinh.id}" /></td>
-                    <td><c:out value="${loTrinh.name}" /></td>
-                    <td><a href="<%=request.getContextPath()%>/edit?id=${loTrinh.id}">Sua</a>
+                    <td><c:out value="${baiDoc.id}" /></td>
+                    <td><c:out value="${baiDoc.name}" /></td>
+                    <td><a href="<%=request.getContextPath()%>/edit?id=${baiDoc.id}">Sua</a>
                         &nbsp;&nbsp;&nbsp;&nbsp; <a
-                                href="<%=request.getContextPath()%>/delete?id=<c:out value='${loTrinh.id}' />">Xoa</a></td>
+                                href="<%=request.getContextPath()%>/delete?id=<c:out value='${baiDoc.id}' />">Xoa</a></td>
                 </tr>
             </c:forEach>
             <!-- } -->

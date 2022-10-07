@@ -59,13 +59,13 @@ public class LoTrinhServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         List<rikkei.academy.model.LoTrinh> listAdminn = loTrinhService.selectAllAdmin();
         request.setAttribute("listAdmin", listAdminn);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewadmin/user-lisst.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewlotrinh/lotrinh-list.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewadmin/user-form.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewlotrinh/lotrinh-form.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -73,8 +73,8 @@ public class LoTrinhServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         rikkei.academy.model.LoTrinh existingUser = loTrinhService.selectAdmin(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewadmin/user-form.jsp");
-        request.setAttribute("admin", existingUser);
+        request.setAttribute("loTrinh", existingUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewlotrinh/lotrinh-form.jsp");
         dispatcher.forward(request, response);
 
     }

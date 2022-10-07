@@ -40,6 +40,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Roboto:wght@700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -53,7 +56,8 @@
             align-items: center;
             min-height: 8vh;
             background-color: #ffffff;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Alkalami', serif;
+            font-family: 'Roboto', sans-serif;
         }
         .logo {
             color: rgb(226, 226, 226);
@@ -157,7 +161,7 @@
             background-color: #ffffff;
             color: #ff0000;
             padding: 16px;
-            font-size: 16px;
+            font-size: 13px;
             border: none;
         }
         .dropdown {
@@ -173,13 +177,13 @@
             z-index: 1;
         }
         .dropdown-content a {
-            color: black;
+            color: #ff0000;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
         .dropdown-content a:hover {
-            background-color: #ddd;
+            background-color: rgb(255, 243, 0);
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -208,19 +212,9 @@
             </div>
 
             <div class="dropdown">
-                <p class="dropbtn">Khoa Hoc</p>
-                <div class="dropdown-content">
-                    <a href="/HomeServlet?action=khoa1">TRAINING PROGRAM PREPARATION</a>
-                    <a href="/HomeServlet?action=khoa2">TRAINING PROGRAM PREPARATION WITH JAVASCRIPT</a>
-                    <a href="/HomeServlet?action=khoa3">ADVANCED PROGRAMMING WITH JAVA</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
-                    <a href="/JavaServlet?action=jv6">Fullstack Java 6 tháng</a>
-                    <a href="/HomeServlet?action=js">Fullstack Javascript 6 tháng</a>
+                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>
                 </div>
             </div>
 
@@ -233,9 +227,6 @@
                 </div>
             </div>
 
-            <div class="dropdown">
-                <a href="/AdminServlet?action="><p class="dropbtn">CRUD</p></a>
-            </div>
 
             <div class="dropdown">
                 <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>
