@@ -87,7 +87,7 @@
                             class="bi bi-house-door"></i> Trang Chủ</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><p><i class="bi bi-archive"></i> Lộ Trình</p></a>
+                    <a class="nav-link" href="UserSl?action=lotrinh"><p><i class="bi bi-archive"></i> Lộ Trình</p></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><p><i class="bi bi-book"></i> Khóa Học</p></a>

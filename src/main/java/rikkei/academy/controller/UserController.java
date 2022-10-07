@@ -1,8 +1,11 @@
 package rikkei.academy.controller;
 
+import rikkei.academy.model.LoTrinh;
 import rikkei.academy.model.Role;
 import rikkei.academy.model.RoleName;
 import rikkei.academy.model.User;
+import rikkei.academy.service.lotrinh.ILoTrinhService;
+import rikkei.academy.service.lotrinh.LoTrinhServiceIMPL;
 import rikkei.academy.service.role.IRoleService;
 import rikkei.academy.service.role.RoleServiceIMPL;
 import rikkei.academy.service.user.IUserService;
@@ -20,6 +23,7 @@ import javax.servlet.annotation.*;
 
 @WebServlet(value = "/users")
 public class UserController extends HttpServlet {
+    private ILoTrinhService loTrinhService = new LoTrinhServiceIMPL();
 
     private IRoleService roleService = new RoleServiceIMPL();
     private IUserService userService = new UserServiceIMPL();
