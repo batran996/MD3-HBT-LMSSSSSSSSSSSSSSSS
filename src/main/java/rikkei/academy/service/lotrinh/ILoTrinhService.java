@@ -6,7 +6,7 @@ import rikkei.academy.service.IGenericUser;
 import java.util.List;
 
 public interface ILoTrinhService extends IGenericUser {
-    LoTrinh findByName(String name);
+    List<LoTrinh> findByName(String name);
     LoTrinh findById(int id);
 
 }

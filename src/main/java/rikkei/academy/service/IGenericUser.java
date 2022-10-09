@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IGenericUser<T> {
     List<T> findAll();
+    List<T> findByName(String name);
 
 }

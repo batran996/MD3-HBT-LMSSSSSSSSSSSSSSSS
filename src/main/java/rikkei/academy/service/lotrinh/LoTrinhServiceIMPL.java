@@ -35,21 +35,22 @@ public class LoTrinhServiceIMPL implements ILoTrinhService{
     }
 
     @Override
-    public LoTrinh findByName(String name) {
-        LoTrinh loTrinh = null;
+    public List<LoTrinh> findByName(String name) {
+        List<LoTrinh> loTrinhList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(LOTRINH_BY_NAME);
             preparedStatement.setString(1, name);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
-                loTrinh = new LoTrinh(id,name);
+                LoTrinh loTrinh = new LoTrinh(id,name);
+                loTrinhList.add(loTrinh);
             }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return loTrinh;
+        return loTrinhList;
     }
 
     @Override

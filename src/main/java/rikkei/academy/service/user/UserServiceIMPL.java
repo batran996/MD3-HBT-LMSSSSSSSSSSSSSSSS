@@ -29,6 +29,7 @@ public class UserServiceIMPL implements IUserService {
 
     private final String DELETE_USER = "delete from users where id = ?";
     private final String UPDATE_ROLE = " update user_role set role_id = ? where  user_id = ?";
+    private final String SQL_UPDATE = "UPDATE users set password = ? where id = ?";
 
     @Override
     public void save(User user) {
@@ -229,6 +230,17 @@ public class UserServiceIMPL implements IUserService {
             connection.commit();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void update(User user) throws SQLException {
+        try (
+                PreparedStatement ps = connection.prepareStatement(SQL_UPDATE);
+        ) {
+            ps.setString(1, user.getPassword());
+            ps.setInt(2, user.getId());
+            ps.executeUpdate();
         }
     }
 }

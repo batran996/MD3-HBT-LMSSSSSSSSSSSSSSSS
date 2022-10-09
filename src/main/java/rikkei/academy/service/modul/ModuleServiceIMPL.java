@@ -36,8 +36,8 @@ public class ModuleServiceIMPL implements IModuleService {
     }
 
     @Override
-    public Module findByName(String name) {
-        Module module = null;
+    public List<Module> findByName(String name) {
+        List<Module> moduleList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(MODULE_BY_ID);
             preparedStatement.setString(1, name);
@@ -45,12 +45,13 @@ public class ModuleServiceIMPL implements IModuleService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int id_lotrinh = resultSet.getInt("id_lotrinh");
-                module = new Module(id, id_lotrinh, name);
+                Module module = new Module(id, id_lotrinh, name);
+                moduleList.add(module);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        return module;
+        return moduleList;
     }
 
     @Override

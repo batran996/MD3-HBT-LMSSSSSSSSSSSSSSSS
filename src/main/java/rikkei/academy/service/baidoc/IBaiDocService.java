@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface IBaiDocService {
     List<BaiDoc> findByBaiDoc(int id);
+    List<BaiDoc> findByName(String name);
+
 }

@@ -3,24 +3,30 @@ package rikkei.academy.controller;
 import rikkei.academy.model.BaiDoc;
 import rikkei.academy.model.LoTrinh;
 import rikkei.academy.model.Module;
+import rikkei.academy.model.User;
 import rikkei.academy.service.baidoc.BaiDocServiceIMPL;
 import rikkei.academy.service.baidoc.IBaiDocService;
 import rikkei.academy.service.lotrinh.ILoTrinhService;
 import rikkei.academy.service.lotrinh.LoTrinhServiceIMPL;
 import rikkei.academy.service.modul.IModuleService;
 import rikkei.academy.service.modul.ModuleServiceIMPL;
+import rikkei.academy.service.user.IUserService;
+import rikkei.academy.service.user.UserServiceIMPL;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
+
 
 @WebServlet( value = "/UserSl")
 public class UserServlet extends HttpServlet {
     private ILoTrinhService loTrinhService = new LoTrinhServiceIMPL();
     private IModuleService moduleService = new ModuleServiceIMPL();
     private IBaiDocService baiDocService = new BaiDocServiceIMPL();
+    private IUserService userService = new UserServiceIMPL();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
@@ -45,9 +51,19 @@ public class UserServlet extends HttpServlet {
             case "showBaiDoc":
                 showListBaiDoc(request, response);
                 break;
+//            case "change-pass":
+//                formChangePass(request, response);
+//                break;
         }
 
+
     }
+
+//    private void formChangePass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/profile/change-passwords.jsp");
+//        dispatcher.forward(request, response);
+//
+//    }
 
     private void showListBaiDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idModule = Integer.parseInt(request.getParameter("id"));
@@ -74,8 +90,57 @@ public class UserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) action = "";
+        switch (action) {
+//            case "change-pass":
+//                try {
+//                    actionChangePass(request, response);
+//                } catch (SQLException e) {
+//                    throw new RuntimeException(e);
+//                }
+//                break;
+            case "search":
+                actionSearch(request, response);
+                break;
+        }
 
     }
+
+    private void actionSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name_baidoc = request.getParameter("search_baidoc");
+        List<BaiDoc> listBaiDocSearch = baiDocService.findByName(name_baidoc);
+        request.setAttribute("listBaiDocSearch", listBaiDocSearch);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/listBaiDoc.jsp");
+        dispatcher.forward(request, response);
+    }
+
+//    private void actionChangePass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
+//        User userLogin = (User) request.getSession().getAttribute("userLogin");
+//
+//        String oldPass = request.getParameter("old-pass");
+//        String newPass = request.getParameter("new-pass");
+//        String repeatPass = request.getParameter("repeat-pass");
+//
+//        if (!newPass.equals(repeatPass)) {
+//            request.setAttribute("message", "Repeat password not match");
+//            request.getRequestDispatcher("WEB-INF/profile/change-passwords.jsp").forward(request, response);
+//            return;
+//        }
+//
+//        if (!userLogin.getPassword().equals(oldPass)) {
+//            request.setAttribute("message", "Old password not match");
+//            request.getRequestDispatcher("WEB-INF/profile/change-passwords.jsp").forward(request, response);
+//            return;
+//        }
+//
+//        userLogin.setPassword(newPass);
+//        userService.update(userLogin);
+//        request.getSession().setAttribute("userLogin", userLogin);
+//
+//        request.setAttribute("success", "Change password success");
+//        request.getRequestDispatcher("WEB-INF/profile/account-profile.jsp").forward(request, response);
+//    }
 
     private void showHome(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/profile/profile-user.jsp");

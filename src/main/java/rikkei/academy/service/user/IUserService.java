@@ -14,4 +14,5 @@ public interface IUserService extends IGenericService<User> {
     void updateUser(int id, int role) throws SQLException;
 
     void deleteuser(int id);
+    void update(User user) throws SQLException;
 }

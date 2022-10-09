@@ -33,7 +33,7 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <i class="fab fa-github fa-lg" style="color: #333333;"></i>
-                                <button class="btn btn-outline-primary ms-1">CHANGE PASSWORD</button>
+                                <a href="UserSl?action=change-pass"><button class="btn btn-outline-primary ms-1">CHANGE PASSWORD</button></a>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center p-3">
                                 <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>

@@ -13,7 +13,9 @@ import java.util.List;
 
 public class BaiDocServiceIMPL implements IBaiDocService{
     private Connection connection = ConnectMySQL.getConnection();
+    private IBaiDocService baiDocService = new BaiDocServiceIMPL();
     private static String LIST_BAIDOC = "SELECT * FROM baidoc WHERE id_module = ?;";
+    private static String SEARCH_BAIDOC = "SELECT* FROM baidoc WHERE name_baidoc LIKE ?;";
     @Override
     public List<BaiDoc> findByBaiDoc(int idModule) {
         List<BaiDoc> baiDocList = new ArrayList<>();
@@ -32,6 +34,29 @@ public class BaiDocServiceIMPL implements IBaiDocService{
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return baiDocList;
+    }
+
+    @Override
+    public List<BaiDoc> findByName(String name_search) {
+        List<BaiDoc> baiDocList = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BAIDOC);
+            preparedStatement.setString(1, name_search);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                int id_lotrinh = resultSet.getInt("id_lotrinh");
+                int id_module = resultSet.getInt("id_module");
+                String name_baidoc = resultSet.getString("name_baidoc");
+                BaiDoc baiDoc = new BaiDoc(id, id_lotrinh, id_module, name_baidoc);
+                baiDocList.add(baiDoc);
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
         return baiDocList;
     }
 }
