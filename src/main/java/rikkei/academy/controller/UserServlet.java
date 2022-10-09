@@ -26,7 +26,6 @@ public class UserServlet extends HttpServlet {
     private ILoTrinhService loTrinhService = new LoTrinhServiceIMPL();
     private IModuleService moduleService = new ModuleServiceIMPL();
     private IBaiDocService baiDocService = new BaiDocServiceIMPL();
-    private IUserService userService = new UserServiceIMPL();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
