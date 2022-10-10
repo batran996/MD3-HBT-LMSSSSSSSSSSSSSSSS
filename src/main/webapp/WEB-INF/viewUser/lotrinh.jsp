@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<img src="/img/lms.jpg">
+<%--<img src="/img/lms.jpg">--%>
 <form method="get">
     <table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
         <tr class="table-warning">

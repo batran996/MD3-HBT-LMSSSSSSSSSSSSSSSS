@@ -69,8 +69,8 @@
 </head>
 <body>
 
-<img src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/lms.jpg?alt=media&token=bb391b89-189b-4044-8250-205e22535447">
-<h1 style="color: red">Chào mừng bạn đến trung tâm đào tạo IT Rikkei Academy</h1>
+<img src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/lms.jpg?alt=media&token=bb391b89-189b-4044-8250-205e22535447" style="width: 100%">
+<%--<h1 style="color: red">Chào mừng bạn đến trung tâm đào tạo IT Rikkei Academy</h1>--%>
 <section>
     <div class="box">
         <h1>Search</h1>

@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 //name = "AdminServlet", value = "/AdminServlet"
-@WebServlet("/")
+@WebServlet(value = {"/", "/lotrinh"})
 public class LoTrinhServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -29,7 +29,14 @@ public class LoTrinhServlet extends HttpServlet {
             throws ServletException, IOException {
         String action = request.getServletPath();
 
+        String home = request.getParameter("home");
+        if (home != null) {
+            request.getRequestDispatcher("/WEB-INF/profile/profile.jsp").forward(request, response);
+            return;
+        }
+
         try {
+            System.out.println("action ----> " + action);
             switch (action) {
                 case "/new":
                     showNewForm(request, response);
@@ -98,10 +105,13 @@ public class LoTrinhServlet extends HttpServlet {
     }
 
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException {
+            throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
         loTrinhService.deleteAdmin(id);
-        response.sendRedirect("list");
+
+        request.setAttribute("listAdmin", loTrinhService.selectAllAdmin());
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/viewlotrinh/lotrinh-list.jsp");
+        dispatcher.forward(request, response);
 
     }
 }
