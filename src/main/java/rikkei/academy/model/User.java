@@ -1,6 +1,8 @@
 package rikkei.academy.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class User {
@@ -10,9 +12,10 @@ public class User {
     private String email;
     private String password;
     private Set<Role> roles = new HashSet<>();
+    private List<Role> roleList = new ArrayList<>();
     private String avatar;
 
-    public User() {
+    public User(int id, String nameUpdate, String userName, String email, String password, Set<Role> roles) {
     }
 
     public User(int id, String name, String username, String email, String password, Set<Role> roles, String avatar) {
@@ -24,7 +27,6 @@ public class User {
         this.roles = roles;
         this.avatar = avatar;
     }
-
 
     public User(String name, String username, String email, String password, Set<Role> roles) {
         this.name = name;
@@ -40,13 +42,42 @@ public class User {
         this.roles = roles;
     }
 
-    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+    public User(int id, String name, String username, String email, String password, List<Role> roleList, String avatar) {
         this.id = id;
         this.name = name;
-        this.roles = roles;
-        this.avatar = avatar;
+        this.username = username;
         this.email = email;
+        this.password = password;
+        this.roleList = roleList;
+        this.avatar = avatar;
     }
+
+    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+
+    }
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
+//<<<<<<< HEAD
+////=======
+////    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+////        this.id = id;
+////        this.name = name;
+////        this.roles = roles;
+////        this.avatar = avatar;
+////        this.email = email;
+////>>>>>>> ha
+//=======
+//>>>>>>> tung1
+    }
+
+//    public User(int id, String name, String username, String email, String password, List<Role> roleList, String avatar) {
+//
+//    }
 
     public int getId() {
         return id;

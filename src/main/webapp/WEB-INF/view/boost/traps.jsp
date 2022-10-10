@@ -1,8 +1,15 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: doquyen7796
+  Date: 29/09/2022
+  Time: 22:26
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
-    <title>loTrinh</title>
+    <title>admin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Poppins:ital,wght@0,700;1,300&display=swap"
@@ -18,7 +25,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Alkalami&family=Roboto:wght@700&display=swap" rel="stylesheet">
 
     <style>
         * {
@@ -27,9 +33,6 @@
             box-sizing: border-box;
         }
 
-        .dropdown-content:hover {
-            display: block;
-        }
 
         nav {
             display: flex;
@@ -37,8 +40,7 @@
             align-items: center;
             min-height: 8vh;
             background-color: #ffffff;
-            font-family: 'Alkalami', serif;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .logo {
@@ -80,31 +82,19 @@
             margin: 5px;
             transition: all 0.3s ease;
         }
-        body {
-            background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
-            background-size: cover;
-            width: 100%;
-            height: 100vh;
-            background-position: center;
-        }
+
         @media screen and (max-width: 1024px) {
             .nav-links {
                 width: 60%;
             }
-            body {
-                background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
-                background-size: cover;
-                width: 100%;
-                height: 100vh;
-                background-position: center;
-            }
         }
+
 
         @media screen and (max-width: 768px) {
             body {
                 overflow-x: hidden;
-                background-image: url("https://i.pinimg.com/originals/2c/84/5a/2c845a66b8ad2a8aafd288bdc16cd459.jpg");
             }
+
             .nav-links {
                 position: absolute;
                 right: 0;
@@ -155,12 +145,13 @@
             transform: rotate(45deg) translate(-5px, -6px);
         }
 
+
         /*ssss*/
         .dropbtn {
             background-color: #ffffff;
             color: #ff0000;
             padding: 16px;
-            font-size: 13px;
+            font-size: 16px;
             border: none;
         }
 
@@ -179,21 +170,17 @@
         }
 
         .dropdown-content a {
-            color: #ff0000;
+            color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
 
         .dropdown-content a:hover {
-            background-color: rgb(255, 243, 0);
+            background-color: #ddd;
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown-content:hover {
             display: block;
         }
 
@@ -201,46 +188,26 @@
             background-color: #ffd200;
         }
 
-        .anh1 {
-            display: flex;
-            justify-content: center;
-        }
-
-    </style>
-    <style>
-        .dropdown-content:hover {
-            display: block;
-        }
     </style>
 <body>
 <form action="loginServlet" method="post">
     <input type="hidden" name="action" value="home">
     <nav>
         <div class="logo">
-            <h1 style="color: darkred">WELCOME : ${user.name}</h1>
+            <h1 style="text-align: center;color: red; " >HOME ADMIN HBT</h1>
         </div>
         <ul class="nav-links">
+
+            </div>
 
             <div class="dropdown">
                 <a href="/HomeServlet?action=goHome"><p class="dropbtn">Trang Chu</p></a>
             </div>
-
-
             <div class="dropdown">
-                <a href="/users?action=user"><p class="dropbtn">User</p></a>
-            </div>
-
-
-            <%--            <div class="dropdown">--%>
-            <%--                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>--%>
-            <%--            </div>--%>
-
-            <div class="dropdown">
-                <p class="dropbtn">MANAGER</p>
+                <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
-                    <a href="/AdminServlet?action=">Manager LOTRINH</a>
-                    <a href="/Module?action=">Manager MODULE</a>
-                    <a href="/BaiDoc?action=">Manager BAIDOC</a>
+                    <a href="/HomeServlet?action=jv">Fullstack Java 6 tháng</a>
+                    <a href="/HomeServlet?action=js">Fullstack Javascript 6 tháng</a>
                 </div>
             </div>
 
@@ -250,11 +217,12 @@
                     <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>
                     <a href="/HomeServlet?action=caidat">Cai Dat</a>
                     <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>
+
                 </div>
             </div>
 
             <div class="dropdown">
-                <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>
+                <a href="/view/login/login.jsp"><p class="dropbtn">Log Out</p></a>
             </div>
 
 
@@ -265,69 +233,16 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <%--<form action="loginServlet" method="post">--%>
-    <%--    <input type="hidden" name="action" value="home">--%>
-    <%--    <nav>--%>
-    <%--        <img class="anh1" style="width: 5%" src="/img/LOGO.png" alt="">--%>
-
-    <%--        <div class="logo">--%>
-    <%--            <h1 style="color: darkred">WELCOME : ${user.name}</h1>--%>
-    <%--        </div>--%>
-    <%--        <ul class="nav-links">--%>
-
-    <%--            <div class="dropdown">--%>
-    <%--                <a href="/HomeServlet?action=goHome"><p class="dropbtn">Trang Chu</p></a>--%>
-    <%--            </div>--%>
-
-
-    <%--&lt;%&ndash;            <div class="dropdown">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
-    <%--                <a href="/users?action=user"><p class="dropbtn">User</p></a>--%>
-    <%--&lt;%&ndash;&lt;%&ndash;            </div>&ndash;%&gt;&ndash;%&gt;--%>
-
-
-    <%--&lt;%&ndash;            <div class="dropdown">&ndash;%&gt;--%>
-    <%--                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>--%>
-    <%--&lt;%&ndash;=======&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                <p class="dropbtn">Lo trinh</p>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                <div class="dropdown-content" style="display: none" >&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                    <a href="/BaiDoc?action=">CRUD MODULE</a>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                </div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;>>>>>>> ha&ndash;%&gt;--%>
-    <%--            </div>--%>
-
-
-    <%--            <div class="dropdown">--%>
-    <%--                <p class="dropbtn">Bang Dieu Khien</p>--%>
-    <%--                <div class="dropdown-content">--%>
-    <%--                    <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>--%>
-    <%--                    <a href="/HomeServlet?action=caidat">Cai Dat</a>--%>
-    <%--                    <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-
-
-    <%--            <div class="dropdown">--%>
-    <%--                <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>--%>
-    <%--            </div>--%>
-
-
-    <%--        </ul>--%>
-    <%--        <div class="bugger">--%>
-    <%--            <div class="line1"></div>--%>
-    <%--            <div class="line2"></div>--%>
-    <%--            <div class="line3"></div>--%>
-    <%--        </div>--%>
-    <%--    </nav>--%>
 
     <script>
         const navSile = () => {
             const bugger = document.querySelector('.bugger');
             const nav = document.querySelector('.nav-links');
             const navLinks = document.querySelectorAll('.nav-links li');
+
             bugger.addEventListener('click', () => {
                 nav.classList.toggle('nav-active');
+
                 navLinks.forEach((link, index) => {
                     if (link.style.animation) {
                         link.style.animation = '';

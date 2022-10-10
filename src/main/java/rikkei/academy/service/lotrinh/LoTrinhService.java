@@ -14,7 +14,7 @@ import java.util.List;
 public class LoTrinhService {
     private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";
     private static final String USER = "root";
-    private static final String PASS = "haphamlathe";
+    private static final String PASS = "@Roba1996";
 
 
     private static final String INSERT_ADMIN_SQL = "INSERT INTO lotrinh" + "  (name) VALUES " + " (?);";
@@ -23,6 +23,7 @@ public class LoTrinhService {
     private static final String SELECT_ALL_ADMIN = "select * from lotrinh";
     private static final String DELETE_ADMIN_SQL = "delete from lotrinh where id = ?;";
     private static final String UPDATE_ADMIN_SQL = "update lotrinh set name = ? where id = ?;";
+
     protected Connection getConnection() {
         Connection connection = null;
         try {
@@ -68,8 +69,10 @@ public class LoTrinhService {
 
     public List<LoTrinh> selectAllAdmin() {
         List<LoTrinh> loTrinhList = new ArrayList<>();
-        try (Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ADMIN);) {
+        try (
+                Connection connection = getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ADMIN)
+        ) {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {

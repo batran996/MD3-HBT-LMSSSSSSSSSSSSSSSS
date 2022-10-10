@@ -12,6 +12,7 @@ import java.util.List;
 //name = "AdminServlet", value = "/AdminServlet"
 @WebServlet("/")
 public class LoTrinhServlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
     private LoTrinhService loTrinhService;
 

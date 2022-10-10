@@ -21,7 +21,7 @@ public class HomeServlet extends HttpServlet {
             case "goHome":
                 formHome(request, response);
                 break;
-            case "jv":
+            case "lo-trinh":
                 formLotrinh(request, response);
                 break;
             case "js":
@@ -107,13 +107,15 @@ public class HomeServlet extends HttpServlet {
 
     //HOME
     private void formHome(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/profile/profile.jsp");
+
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("WEB-INF/profile/profile.jsp");
+
         requestDispatcher.forward(request, response);
     }
 
     //LO TRINH
     private void formLotrinh(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/jv.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/view/navbar/lotrinh/lo-trinh.jsp");
         requestDispatcher.forward(request, response);
     }
 
