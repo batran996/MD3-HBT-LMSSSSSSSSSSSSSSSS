@@ -15,7 +15,6 @@ public class BaiDocService {
 
     private static final String INSERT_BAIDOC_SQL = "INSERT INTO baidoc" + " (name_baidoc) VALUES " + "(?);";
 
-
     private static final String SELECT_BAIDOC_BY_ID = "select id,name_baidoc from baidoc where id =?";
 
     private static final String SELECT_ALL_BAIDOC = "select id,name_baidoc from baidoc";

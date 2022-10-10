@@ -212,11 +212,11 @@
             </div>
 
             <div class="dropdown">
-                <p class="dropbtn">Lo trinh</p>
+                <p class="dropbtn">MANAGER</p>
                 <div class="dropdown-content">
-                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>
-                    <a href="/BaiDoc?action=">CRUD MODULE</a>
-
+                    <a href="/AdminServlet?action=">Manager LOTRINH</a>
+                    <a href="/Module?action=">Manager MODULE</a>
+                    <a href="/BaiDoc?action=">Manager BAIDOC</a>
                 </div>
             </div>
 
