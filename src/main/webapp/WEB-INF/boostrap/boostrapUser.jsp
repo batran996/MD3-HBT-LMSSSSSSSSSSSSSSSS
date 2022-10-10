@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: TungDao
-  Date: 10/4/2022
-  Time: 8:45 AM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -76,31 +70,32 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <img class="img" src="/img/123.jpg">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span id="toggler" class="navbar-toggler-icon"></span>
-    </button>
-    </c>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/UserSl?action=home"><i class="bi bi-house-door"></i>Trang
-            Chủ</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-archive"></i>Lộ Trình</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-book"></i>Khóa Học</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-menu-button-wide"></i>Bảng Điều Khiển</a>
-        </li>
 
-      </ul>
-    </div>
+    <div class="container-fluid">
+       <div class="logo"><a href="/UserSl?action=home"><img class="img" src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/123.jpg?alt=media&token=e839a5b8-c4b2-402b-a76c-f465c273fbec"></a></div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span id="toggler" class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/UserSl?action=home"><p><i
+                            class="bi bi-house-door"></i> Trang Chủ</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="UserSl?action=lotrinh"><p><i class="bi bi-archive"></i> Lộ Trình</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><p><i class="bi bi-book"></i> Khóa Học</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><p><i class="bi bi-menu-button-wide"></i> Bảng Điều Khiển</p></a>
+                </li>
+
+            </ul>
+        </div>
+<%-->>>>>>> tung1--%>
 
     <div class="user">
       <div class="dropdown">
@@ -127,13 +122,11 @@
       </div>
     </div>
   </div>
-
-
 </nav>
 <script>
   $(document).ready(function () {
     $("button").click(function () {
-      // console.log("Hello World");
+
       $("#navbarNav").slideToggle();
     });
   })

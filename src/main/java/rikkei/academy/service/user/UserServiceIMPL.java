@@ -152,13 +152,13 @@ public class UserServiceIMPL implements IUserService {
             ResultSet resultSet1 = preparedStatement.executeQuery();
             while (resultSet1.next()) {
                 String name = resultSet1.getString("name");
-//<<<<<<< HEAD
                 String username = resultSet1.getString("username");
                 String email = resultSet1.getString("email");
                 String password = resultSet1.getString("password");
                 String avatar = resultSet1.getString("avatar");
 
                 user = new User(id, name, username, email, password, roles, avatar);
+//<<<<<<< HEAD
 //
 //=======
 //                String avatar = resultSet1.getString("avatar");
@@ -166,6 +166,9 @@ public class UserServiceIMPL implements IUserService {
 //                user = new User(id,name,roles,avatar,email);
                 return user;
 //>>>>>>> ha
+//=======
+//
+//>>>>>>> tung1
             }
             connection.commit();
             return user;
@@ -186,7 +189,7 @@ public class UserServiceIMPL implements IUserService {
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 user = findById(id);
-               return user;
+                return user;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -223,19 +226,17 @@ public class UserServiceIMPL implements IUserService {
             System.out.println("Update that bai");
             throw new RuntimeException(e);
         }
-
-
     }
 
     @Override
     public void deleteuser(int id) {
-try {
-    PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER);
-    preparedStatement.setInt(1,id);
-    preparedStatement.executeUpdate();
-    connection.commit();
-} catch (SQLException e) {
-    throw new RuntimeException(e);
-}
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER);
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+            connection.commit();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

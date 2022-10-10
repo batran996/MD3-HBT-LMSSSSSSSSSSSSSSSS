@@ -28,7 +28,6 @@ public class User {
         this.avatar = avatar;
     }
 
-
     public User(String name, String username, String email, String password, Set<Role> roles) {
         this.name = name;
         this.username = username;
@@ -43,7 +42,6 @@ public class User {
         this.roles = roles;
     }
 
-//<<<<<<< HEAD
     public User(int id, String name, String username, String email, String password, List<Role> roleList, String avatar) {
         this.id = id;
         this.name = name;
@@ -64,14 +62,17 @@ public class User {
 
     public void setRoleList(List<Role> roleList) {
         this.roleList = roleList;
+//<<<<<<< HEAD
+////=======
+////    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+////        this.id = id;
+////        this.name = name;
+////        this.roles = roles;
+////        this.avatar = avatar;
+////        this.email = email;
+////>>>>>>> ha
 //=======
-//    public User(int id, String name, Set<Role> roles, String avatar, String email) {
-//        this.id = id;
-//        this.name = name;
-//        this.roles = roles;
-//        this.avatar = avatar;
-//        this.email = email;
-//>>>>>>> ha
+//>>>>>>> tung1
     }
 
 //    public User(int id, String name, String username, String email, String password, List<Role> roleList, String avatar) {
@@ -146,6 +147,4 @@ public class User {
                 ", avatar='" + avatar + '\'' +
                 '}';
     }
-
-
 }

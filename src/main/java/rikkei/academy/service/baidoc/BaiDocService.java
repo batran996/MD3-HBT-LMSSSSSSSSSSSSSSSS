@@ -42,7 +42,7 @@ public class BaiDocService {
         System.out.println(INSERT_BAIDOC_SQL);
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BAIDOC_SQL)) {
-            preparedStatement.setString(1, baiDoc.getName());
+            preparedStatement.setString(1, baiDoc.getName_baidoc());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -98,7 +98,7 @@ public class BaiDocService {
         boolean howUpdate;
         try (Connection connection = getConnection();
              PreparedStatement pr = connection.prepareStatement(UPDATE_BAIDOC_SQL);){
-            pr.setString(1, baiDoc.getName());
+            pr.setString(1, baiDoc.getName_baidoc());
             pr.setInt(2, baiDoc.getId());
             howUpdate = pr.executeUpdate() > 0;
         }

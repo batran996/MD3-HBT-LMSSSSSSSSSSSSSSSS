@@ -1,8 +1,11 @@
 package rikkei.academy.controller;
 
+import rikkei.academy.model.LoTrinh;
 import rikkei.academy.model.Role;
 import rikkei.academy.model.RoleName;
 import rikkei.academy.model.User;
+import rikkei.academy.service.lotrinh.ILoTrinhService;
+import rikkei.academy.service.lotrinh.LoTrinhServiceIMPL;
 import rikkei.academy.service.role.IRoleService;
 import rikkei.academy.service.role.RoleServiceIMPL;
 import rikkei.academy.service.user.IUserService;
@@ -22,6 +25,7 @@ import javax.servlet.annotation.*;
 
 @WebServlet(value = "/users")
 public class UserController extends HttpServlet {
+    private ILoTrinhService loTrinhService = new LoTrinhServiceIMPL();
 
     private IRoleService roleService = new RoleServiceIMPL();
     private IUserService userService = new UserServiceIMPL();
@@ -120,18 +124,23 @@ public class UserController extends HttpServlet {
                 }
                 break;
             case "delete_user":
-                actionDeleteUser(request,response);
+                try {
+                    actionDeleteUser(request,response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
 
         }
     }
 
-    private void actionDeleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void actionDeleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int id = Integer.parseInt(request.getParameter("id"));
         userService.deleteuser(id);
         request.setAttribute("message","delete success!");
-        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
-        requestDispatcher.forward(request,response);
+        showFormuser(request,response);
+//        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
+//        requestDispatcher.forward(request,response);
     }
 
     private void actionEditUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
@@ -144,8 +153,9 @@ public class UserController extends HttpServlet {
         }
          userService.updateUser( id, Integer.parseInt(role));
         request.setAttribute("message","edit success!");
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/edit_user/edit_user.jsp");
-        requestDispatcher.forward(request,response);
+        showFormuser(request,response);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/edit_user/edit_user.jsp");
+//        requestDispatcher.forward(request,response);
 
 
 
@@ -224,6 +234,7 @@ public class UserController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             User allInfo = userService.findById(user.getId());
+
             List<Role> roleList = new ArrayList<>(allInfo.getRoles());
             if (roleList.get(0).getName() == RoleName.ADMIN) {
                 pageJSP = "WEB-INF/profile/profile.jsp";
