@@ -47,7 +47,11 @@ public class BaiDocServiceIMPL implements IBaiDocService{
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BAIDOC);
             preparedStatement.setString(1, '%'+name_search+'%');
+
+            //Thực hiện câu lệnh câu lệnh query
             ResultSet resultSet = preparedStatement.executeQuery();
+
+            //duyệ từng dòng trong bảng
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 int id_lotrinh = resultSet.getInt("id_lotrinh");

@@ -40,6 +40,8 @@ public class UserServiceIMPL implements IUserService {
             preparedStatement.setString(2, user.getUsername());
             preparedStatement.setString(3, user.getEmail());
             preparedStatement.setString(4, user.getPassword());
+
+            // thực hiện câu lệnh ko trả về giá trị.
             preparedStatement.executeUpdate();
             ResultSet resultSet = preparedStatement.getGeneratedKeys();
             int user_id = 0; //LAY RA ID CUAR USER DE TAO VAO BANG CHUNG GIAN

@@ -50,9 +50,7 @@ public class UserServlet extends HttpServlet {
             case "showBaiDoc":
                 showListBaiDoc(request, response);
                 break;
-            case "search":
-                actionSearchModule(request, response);
-                break;
+
 //            case "change-pass":
 //                formChangePass(request, response);
 //                break;
@@ -63,8 +61,8 @@ public class UserServlet extends HttpServlet {
 
     private void actionSearchModule(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name_module = request.getParameter("name_search");
-        List<BaiDoc> listBaiDocSearch = moduleService.findByName(name_module);
-        request.setAttribute("listBaiDoc", listBaiDocSearch);
+        List<BaiDoc> listModuleSearch = moduleService.findByName(name_module);
+        request.setAttribute("listModule", listModuleSearch);
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/listModule.jsp");
         dispatcher.forward(request, response);
 
@@ -111,6 +109,9 @@ public class UserServlet extends HttpServlet {
 //                    throw new RuntimeException(e);
 //                }
 //                break;
+            case "search-module":
+                actionSearchModule(request, response);
+                break;
             default:
                 actionSearchBaiDoc(request, response);
                 break;
