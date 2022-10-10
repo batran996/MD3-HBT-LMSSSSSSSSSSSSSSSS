@@ -124,17 +124,23 @@ public class UserController extends HttpServlet {
                 }
                 break;
             case "delete_user":
-                actionDeleteUser(request,response);
+                try {
+                    actionDeleteUser(request,response);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
                 break;
 
         }
     }
 
-    private void actionDeleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void actionDeleteUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int id = Integer.parseInt(request.getParameter("id"));
         userService.deleteuser(id);
-        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
-        requestDispatcher.forward(request,response);
+        request.setAttribute("message","delete success!");
+        showFormuser(request,response);
+//        RequestDispatcher requestDispatcher= request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
+//        requestDispatcher.forward(request,response);
     }
 
     private void actionEditUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
@@ -146,8 +152,10 @@ public class UserController extends HttpServlet {
             role = String.valueOf(1);
         }
          userService.updateUser( id, Integer.parseInt(role));
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/view/quan-ly-user/user-manager.jsp");
-        requestDispatcher.forward(request,response);
+        request.setAttribute("message","edit success!");
+        showFormuser(request,response);
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/WEB-INF/edit_user/edit_user.jsp");
+//        requestDispatcher.forward(request,response);
 
 
 
@@ -226,15 +234,7 @@ public class UserController extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             User allInfo = userService.findById(user.getId());
-//<<<<<<< HEAD
-//            List<Role>roleList = new ArrayList<>(allInfo.getRoles());
-//           if (roleList.get(0).getName() == RoleName.ADMIN){
-//               pageJSP = "WEB-INF/profile/profile.jsp";
-//
-//           }else {
-//               pageJSP = "WEB-INF/profile/profile-user.jsp";
-//           }
-//=======
+
             List<Role> roleList = new ArrayList<>(allInfo.getRoles());
             if (roleList.get(0).getName() == RoleName.ADMIN) {
                 pageJSP = "WEB-INF/profile/profile.jsp";
@@ -242,7 +242,7 @@ public class UserController extends HttpServlet {
             } else {
                 pageJSP = "WEB-INF/profile/profile-user.jsp";
             }
-//>>>>>>> c56174aded707f1ce478c0436b7ad87f906d77ab
+
         } else {
             pageJSP = "WEB-INF/form-login/login.jsp";
         }

@@ -161,7 +161,17 @@ public class UserServiceIMPL implements IUserService {
                 String avatar = resultSet1.getString("avatar");
 
                 user = new User(id, name, username, email, password, roles, avatar);
-
+//<<<<<<< HEAD
+//
+//=======
+//                String avatar = resultSet1.getString("avatar");
+//                String email = resultSet1.getString("email");
+//                user = new User(id,name,roles,avatar,email);
+                return user;
+//>>>>>>> ha
+//=======
+//
+//>>>>>>> tung1
             }
             connection.commit();
             return user;
@@ -219,8 +229,6 @@ public class UserServiceIMPL implements IUserService {
             System.out.println("Update that bai");
             throw new RuntimeException(e);
         }
-
-
     }
 
     @Override

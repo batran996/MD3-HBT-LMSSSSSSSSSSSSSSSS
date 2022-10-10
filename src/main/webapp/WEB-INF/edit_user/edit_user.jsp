@@ -12,9 +12,12 @@
     <title>USER EDIT</title>
 </head>
 <body>
-
+<a href="/HomeServlet?action=goHome"> <p>Back Home</p></a>
 <form method="post" action="/users?action=edit_user">
     <table border="1">
+        <c:if test="${requestScope['message'] != null}">
+            <p style="color: #0b5fda">${requestScope['message']}</p>
+        </c:if>
         <tr>
             <th>ID</th>
             <th>NAME</th>

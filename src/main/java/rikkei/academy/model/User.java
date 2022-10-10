@@ -52,13 +52,32 @@ public class User {
         this.avatar = avatar;
     }
 
+    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+
+    }
+
     public List<Role> getRoleList() {
         return roleList;
     }
 
     public void setRoleList(List<Role> roleList) {
         this.roleList = roleList;
+//<<<<<<< HEAD
+////=======
+////    public User(int id, String name, Set<Role> roles, String avatar, String email) {
+////        this.id = id;
+////        this.name = name;
+////        this.roles = roles;
+////        this.avatar = avatar;
+////        this.email = email;
+////>>>>>>> ha
+//=======
+//>>>>>>> tung1
     }
+
+//    public User(int id, String name, String username, String email, String password, List<Role> roleList, String avatar) {
+//
+//    }
 
     public int getId() {
         return id;
