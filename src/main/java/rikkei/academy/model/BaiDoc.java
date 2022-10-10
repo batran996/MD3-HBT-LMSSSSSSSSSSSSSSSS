@@ -2,17 +2,6 @@ package rikkei.academy.model;
 
 public class BaiDoc {
     private int id;
-//<<<<<<< HEAD
-//    private String name;
-//
-//    public BaiDoc(String name) {
-//        this.name = name;
-//    }
-//
-//    public BaiDoc(int id, String name) {
-//        this.id = id;
-//        this.name = name;
-//=======
     private int id_lotrinh;
     private int id_module;
     String name_baidoc;
@@ -25,15 +14,15 @@ public class BaiDoc {
         this.id_lotrinh = id_lotrinh;
         this.id_module = id_module;
         this.name_baidoc = name_baidoc;
-//>>>>>>> tung1
     }
 
-    public BaiDoc(String name) {
-
+    public BaiDoc(String name_baidoc) {
+        this.name_baidoc = name_baidoc;
     }
 
-    public BaiDoc(int id, String name) {
-
+    public BaiDoc(int id, String name_baidoc) {
+        this.id = id;
+        this.name_baidoc = name_baidoc;
     }
 
     public int getId() {
@@ -44,22 +33,15 @@ public class BaiDoc {
         this.id = id;
     }
 
-//<<<<<<< HEAD
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
-//
-//    @Override
-//    public String toString() {
-//        return "BaiDoc{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                '}';
-//=======
+    public String getName() {
+        return name_baidoc;
+    }
+
+
+    public void setName(String name) {
+        this.name_baidoc = name_baidoc;
+    }
+
     public int getId_lotrinh() {
         return id_lotrinh;
     }
@@ -82,6 +64,13 @@ public class BaiDoc {
 
     public void setName_baidoc(String name_baidoc) {
         this.name_baidoc = name_baidoc;
-//>>>>>>> tung1
+    }
+
+    @Override
+    public String toString() {
+        return "BaiDoc{" +
+                "id=" + id +
+                ", name_baidoc='" + name_baidoc + '\'' +
+                '}';
     }
 }

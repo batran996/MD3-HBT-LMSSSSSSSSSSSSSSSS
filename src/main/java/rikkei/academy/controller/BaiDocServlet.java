@@ -22,39 +22,39 @@ public class BaiDocServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            doGet(request, response);
+        doGet(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String action = request.getParameter("action");
-            if (action == null) {
-                action = "";
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        try {
+            switch (action) {
+                case "newbaidoc":
+                    showNewForm(request, response);
+                    break;
+                case "insert":
+                    insertBaiDoc(request, response);
+                    break;
+                case "delete":
+                    deleteBaiDoc(request, response);
+                    break;
+                case "edit":
+                    showEditForm(request, response);
+                    break;
+                case "update":
+                    updateBaiDoc(request, response);
+                    break;
+                default:
+                    listBaiDoc(request, response);
+                    break;
             }
-            try {
-                switch (action) {
-                    case "newbaidoc":
-                        showNewForm(request, response);
-                        break;
-                    case "insert":
-                        insertBaiDoc(request, response);
-                        break;
-                    case "delete":
-                        deleteBaiDoc(request, response);
-                        break;
-                    case "edit":
-                        showEditForm(request, response);
-                        break;
-                    case "update":
-                        updateBaiDoc(request, response);
-                        break;
-                    default:
-                        listBaiDoc(request, response);
-                        break;
-                }
-            } catch (SQLException ex) {
-                throw new ServletException(ex);
-            }
+        } catch (SQLException ex) {
+            throw new ServletException(ex);
+        }
     }
 
     private void listBaiDoc(HttpServletRequest request, HttpServletResponse response)

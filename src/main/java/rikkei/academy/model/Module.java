@@ -37,4 +37,30 @@ public class Module {
     public void setName_module(String name_module) {
         this.name_module = name_module;
     }
+
+    //
+    public Module(String name_module) {
+        this.name_module = name_module;
+    }
+
+    public String getName() {
+        return name_module;
+    }
+
+    public void setName(String name_module) {
+        this.name_module = name_module;
+    }
+    public Module(int id, String name_module) {
+        this.id = id;
+        this.name_module = name_module;
+    }
+
+    @Override
+    public String toString() {
+        return "Module{" +
+                "id=" + id +
+                ", name_module='" + name_module + '\'' +
+                '}';
+    }
+
 }

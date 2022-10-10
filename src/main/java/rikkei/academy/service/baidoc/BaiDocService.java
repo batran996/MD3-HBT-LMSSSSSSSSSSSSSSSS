@@ -15,7 +15,6 @@ public class BaiDocService {
 
     private static final String INSERT_BAIDOC_SQL = "INSERT INTO baidoc" + " (name_baidoc) VALUES " + "(?);";
 
-
     private static final String SELECT_BAIDOC_BY_ID = "select id,name_baidoc from baidoc where id =?";
 
     private static final String SELECT_ALL_BAIDOC = "select id,name_baidoc from baidoc";
@@ -42,7 +41,7 @@ public class BaiDocService {
         System.out.println(INSERT_BAIDOC_SQL);
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_BAIDOC_SQL)) {
-            preparedStatement.setString(1, baiDoc.getName_baidoc());
+            preparedStatement.setString(1, baiDoc.getName());
             System.out.println(preparedStatement);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -70,7 +69,7 @@ public class BaiDocService {
     public List<BaiDoc> selectAllBaiDoc() {
         List<BaiDoc> baiDocList = new ArrayList<>();
         try (
-             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BAIDOC);) {
+                PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_BAIDOC);) {
             System.out.println(preparedStatement);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
@@ -87,9 +86,9 @@ public class BaiDocService {
     public boolean deleteBaiDoc(int id) throws SQLException {
         boolean howDelete;
         try (Connection connection = getConnection();
-            PreparedStatement pr = connection.prepareStatement(DELETE_BAIDOC_SQL);){
-                pr.setInt(1, id);
-                howDelete = pr.executeUpdate() > 0;
+             PreparedStatement pr = connection.prepareStatement(DELETE_BAIDOC_SQL);){
+            pr.setInt(1, id);
+            howDelete = pr.executeUpdate() > 0;
         }
         return howDelete;
     }
@@ -98,7 +97,7 @@ public class BaiDocService {
         boolean howUpdate;
         try (Connection connection = getConnection();
              PreparedStatement pr = connection.prepareStatement(UPDATE_BAIDOC_SQL);){
-            pr.setString(1, baiDoc.getName_baidoc());
+            pr.setString(1, baiDoc.getName());
             pr.setInt(2, baiDoc.getId());
             howUpdate = pr.executeUpdate() > 0;
         }

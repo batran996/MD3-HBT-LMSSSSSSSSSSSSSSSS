@@ -238,9 +238,9 @@
             <div class="dropdown">
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
-                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>
-                    <a href="/BaiDoc?action=">CRUD MODULE</a>
-
+                    <a href="/AdminServlet?action=">Manager LOTRINH</a>
+                    <a href="/Module?action=">Manager MODULE</a>
+                    <a href="/BaiDoc?action=">Manager BAIDOC</a>
                 </div>
             </div>
 
@@ -265,62 +265,6 @@
             <div class="line3"></div>
         </div>
     </nav>
-    <%--<form action="loginServlet" method="post">--%>
-    <%--    <input type="hidden" name="action" value="home">--%>
-    <%--    <nav>--%>
-    <%--        <img class="anh1" style="width: 5%" src="/img/LOGO.png" alt="">--%>
-
-    <%--        <div class="logo">--%>
-    <%--            <h1 style="color: darkred">WELCOME : ${user.name}</h1>--%>
-    <%--        </div>--%>
-    <%--        <ul class="nav-links">--%>
-
-    <%--            <div class="dropdown">--%>
-    <%--                <a href="/HomeServlet?action=goHome"><p class="dropbtn">Trang Chu</p></a>--%>
-    <%--            </div>--%>
-
-
-    <%--&lt;%&ndash;            <div class="dropdown">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<<<<<<< HEAD&ndash;%&gt;--%>
-    <%--                <a href="/users?action=user"><p class="dropbtn">User</p></a>--%>
-    <%--&lt;%&ndash;&lt;%&ndash;            </div>&ndash;%&gt;&ndash;%&gt;--%>
-
-
-    <%--&lt;%&ndash;            <div class="dropdown">&ndash;%&gt;--%>
-    <%--                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>--%>
-    <%--&lt;%&ndash;=======&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                <p class="dropbtn">Lo trinh</p>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                <div class="dropdown-content" style="display: none" >&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                    <a href="/AdminServlet?action=">CRUD LOTRINH</a>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                    <a href="/BaiDoc?action=">CRUD MODULE</a>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;                </div>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;>>>>>>> ha&ndash;%&gt;--%>
-    <%--            </div>--%>
-
-
-    <%--            <div class="dropdown">--%>
-    <%--                <p class="dropbtn">Bang Dieu Khien</p>--%>
-    <%--                <div class="dropdown-content">--%>
-    <%--                    <a href="/HomeServlet?action=baitap">Danh sach bai tap</a>--%>
-    <%--                    <a href="/HomeServlet?action=caidat">Cai Dat</a>--%>
-    <%--                    <a href="/HomeServlet?action=doimatkhau">Doi Mat Khau</a>--%>
-    <%--                </div>--%>
-    <%--            </div>--%>
-
-
-    <%--            <div class="dropdown">--%>
-    <%--                <a href="users?action=logout"><p class="dropbtn">Log Out</p></a>--%>
-    <%--            </div>--%>
-
-
-    <%--        </ul>--%>
-    <%--        <div class="bugger">--%>
-    <%--            <div class="line1"></div>--%>
-    <%--            <div class="line2"></div>--%>
-    <%--            <div class="line3"></div>--%>
-    <%--        </div>--%>
-    <%--    </nav>--%>
-
     <script>
         const navSile = () => {
             const bugger = document.querySelector('.bugger');
