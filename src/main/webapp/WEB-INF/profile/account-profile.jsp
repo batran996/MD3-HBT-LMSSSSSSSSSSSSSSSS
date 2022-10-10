@@ -39,14 +39,7 @@
                                 <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
                                 <button class="btn btn-outline-primary ms-1">CHANGE EMAIL</button>
                             </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
-                                <button class="btn btn-outline-primary ms-1">CHANGE PHONE</button>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-                                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
-                                <button class="btn btn-outline-primary ms-1">CHANGE ADDRESS</button>
-                            </li>
+
                         </ul>
                     </div>
                 </div>

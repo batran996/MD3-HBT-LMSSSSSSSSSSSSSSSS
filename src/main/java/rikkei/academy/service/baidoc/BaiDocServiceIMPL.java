@@ -13,7 +13,6 @@ import java.util.List;
 
 public class BaiDocServiceIMPL implements IBaiDocService{
     private Connection connection = ConnectMySQL.getConnection();
-    private IBaiDocService baiDocService = new BaiDocServiceIMPL();
     private static String LIST_BAIDOC = "SELECT * FROM baidoc WHERE id_module = ?;";
     private static String SEARCH_BAIDOC = "SELECT* FROM baidoc WHERE name_baidoc LIKE ?;";
     @Override
@@ -38,11 +37,16 @@ public class BaiDocServiceIMPL implements IBaiDocService{
     }
 
     @Override
+    public List findAll() {
+        return null;
+    }
+
+    @Override
     public List<BaiDoc> findByName(String name_search) {
         List<BaiDoc> baiDocList = new ArrayList<>();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SEARCH_BAIDOC);
-            preparedStatement.setString(1, name_search);
+            preparedStatement.setString(1, '%'+name_search+'%');
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

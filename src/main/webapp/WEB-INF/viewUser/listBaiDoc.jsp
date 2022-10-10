@@ -17,8 +17,10 @@
 </head>
 <body>
 <h1>Hello World!!!!</h1>
-<input type="text" name="search">
-<a href="UserSl?action=search"><button>Search</button></a>
+<form method="post">
+    <input type="text" name="name_search">
+    <button type="submit">Search</button>
+</form>
 <table align="center" border="1" , style="width: 50%; text-align: center" class="table table-striped">
     <tr class="table-warning">
         <th scope="col">ID</th>
@@ -37,6 +39,7 @@
 
         </c:forEach>
 </table>
+
 </body>
 <jsp:include page='../boostrap/footer.jsp'>
     <jsp:param name="articleId" value=""/>

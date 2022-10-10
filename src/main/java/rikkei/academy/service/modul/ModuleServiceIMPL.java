@@ -14,7 +14,7 @@ public class ModuleServiceIMPL implements IModuleService {
     private Connection connection = ConnectMySQL.getConnection();
     private static String LIST_MODULE = "SELECT * FROM module WHERE id_lotrinh = ?;";
 
-    private static String MODULE_BY_ID = "SELECT * FROM module WHERE name = ?";
+    private static String MODULE_BY_NAME = "SELECT * FROM module WHERE name_module LIKE ?;";
 
     @Override
     public List findAll() {
@@ -39,8 +39,8 @@ public class ModuleServiceIMPL implements IModuleService {
     public List<Module> findByName(String name) {
         List<Module> moduleList = new ArrayList<>();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(MODULE_BY_ID);
-            preparedStatement.setString(1, name);
+            PreparedStatement preparedStatement = connection.prepareStatement(MODULE_BY_NAME);
+            preparedStatement.setString(1, '%'+name+'%');
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");

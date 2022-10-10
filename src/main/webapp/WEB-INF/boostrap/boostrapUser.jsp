@@ -90,10 +90,7 @@
                     <a class="nav-link" href="UserSl?action=lotrinh"><p><i class="bi bi-archive"></i> Lộ Trình</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><p><i class="bi bi-book"></i> Khóa Học</p></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><p><i class="bi bi-menu-button-wide"></i> Bảng Điều Khiển</p></a>
+                    <a class="nav-link" href="/UserSl?action=account"><p><i class="bi bi-menu-button-wide"></i> Bảng Điều Khiển</p></a>
                 </li>
 
             </ul>

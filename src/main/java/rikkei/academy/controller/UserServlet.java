@@ -50,11 +50,23 @@ public class UserServlet extends HttpServlet {
             case "showBaiDoc":
                 showListBaiDoc(request, response);
                 break;
+            case "search":
+                actionSearchModule(request, response);
+                break;
 //            case "change-pass":
 //                formChangePass(request, response);
 //                break;
         }
 
+
+    }
+
+    private void actionSearchModule(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name_module = request.getParameter("name_search");
+        List<BaiDoc> listBaiDocSearch = moduleService.findByName(name_module);
+        request.setAttribute("listBaiDoc", listBaiDocSearch);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/listModule.jsp");
+        dispatcher.forward(request, response);
 
     }
 
@@ -99,17 +111,17 @@ public class UserServlet extends HttpServlet {
 //                    throw new RuntimeException(e);
 //                }
 //                break;
-            case "search":
-                actionSearch(request, response);
+            default:
+                actionSearchBaiDoc(request, response);
                 break;
         }
 
     }
 
-    private void actionSearch(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name_baidoc = request.getParameter("search_baidoc");
+    private void actionSearchBaiDoc(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name_baidoc = request.getParameter("name_search");
         List<BaiDoc> listBaiDocSearch = baiDocService.findByName(name_baidoc);
-        request.setAttribute("listBaiDocSearch", listBaiDocSearch);
+        request.setAttribute("listBaiDoc", listBaiDocSearch);
         RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/viewUser/listBaiDoc.jsp");
         dispatcher.forward(request, response);
     }
