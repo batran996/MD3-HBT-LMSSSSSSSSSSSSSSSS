@@ -8,7 +8,7 @@ public class ConnectMySQL {
    private static Connection connection;
    private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";
    private static final String USER = "root";
-   private static final String PASS = "@Roba1996";
+   private static final String PASS = "haphamlathe";
 
 
 

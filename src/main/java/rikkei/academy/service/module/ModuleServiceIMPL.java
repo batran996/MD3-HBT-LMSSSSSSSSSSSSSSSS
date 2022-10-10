@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModuleServiceIMPL implements IModuleService {
+public class ModuleServiceIMPL {
     private Connection connection = ConnectMySQL.getConnection();
 
     private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";

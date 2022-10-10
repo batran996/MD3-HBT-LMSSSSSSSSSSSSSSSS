@@ -1,5 +1,6 @@
 package rikkei.academy.controller;
 
+import rikkei.academy.model.BaiDoc;
 import rikkei.academy.model.Module;
 import rikkei.academy.service.module.ModuleServiceIMPL;
 
@@ -79,9 +80,10 @@ public class ModuleServlet extends HttpServlet {
     }
     private void FormInsertModule(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name_module");
-        Module newMD = new Module(name);
+        Module newMD =new Module(name);
         moduleServiceIMPL.insertModule(newMD);
         listModule(request, response);
+
 
     }
     private void FormUpdateModule(HttpServletRequest request, HttpServletResponse response) throws
@@ -97,8 +99,4 @@ public class ModuleServlet extends HttpServlet {
         moduleServiceIMPL.deleteModule(id);
         response.sendRedirect("/Module");
     }
-
-
-
-
 }

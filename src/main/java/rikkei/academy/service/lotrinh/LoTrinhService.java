@@ -14,7 +14,7 @@ import java.util.List;
 public class LoTrinhService {
     private static final String URL = "jdbc:mysql://localhost:3306/form_login_jv06";
     private static final String USER = "root";
-    private static final String PASS = "@Roba1996";
+    private static final String PASS = "haphamlathe";
 
 
     private static final String INSERT_ADMIN_SQL = "INSERT INTO lotrinh" + "  (name) VALUES " + " (?);";
