@@ -216,12 +216,12 @@ public class UserController extends HttpServlet {
         User user = new User(name, username, email, password, roles);
         userService.save(user);
         request.setAttribute("success", "Create user success!!");
-        response.sendRedirect("/users?action=login");
+        response.sendRedirect("/users?action=logiin");
     }
 
     //LOGIN
     public void showFormLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/form-login/login.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/form-login/logiin.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -244,7 +244,7 @@ public class UserController extends HttpServlet {
             }
 
         } else {
-            pageJSP = "WEB-INF/form-login/login.jsp";
+            pageJSP = "WEB-INF/form-login/logiin.jsp";
         }
         RequestDispatcher dispatcher = request.getRequestDispatcher(pageJSP);
         dispatcher.forward(request, response);
