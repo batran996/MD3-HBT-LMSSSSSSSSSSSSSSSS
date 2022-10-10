@@ -75,7 +75,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-       <div class="logo"><a href="/UserSl?action=home"><img class="img" src="/img/123.jpg"></a></div>
+       <div class="logo"><a href="/UserSl?action=home"><img class="img" src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/123.jpg?alt=media&token=e839a5b8-c4b2-402b-a76c-f465c273fbec"></a></div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span id="toggler" class="navbar-toggler-icon"></span>
