@@ -16,162 +16,187 @@
 
 <head>
     <title>Home Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "poppins", sans-serif;
+            box-sizing: border-box;
+        }
+
+        .header {
+            height: 100vh;
+            width: 100%;
+            padding: 0 8%;
+            /*thaynen*/
+            /*background: #080008;*/
+            /*thaynen*/
+            position: relative;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 140px;
+        }
+
+        .nav-links {
+            padding: 28px 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-links li a:after {
+            content: '';
+            background: #ff3d00;
+            width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: width 0.5s;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            background: #ff3d00;
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 90%;
+            max-width: 900px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+            padding-top: 50px;
+        }
+
+        .content h1 {
+            font-size: 65px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+
+        .content form {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+        }
+
+        .content form input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            font-size: 18px;
+        }
+
+        .content form button {
+            background: #ff3d00;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .category-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .category {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 61, 0, 0.15);
+            margin: 0 10px;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .category img {
+            width: 25px;
+            margin-bottom: 5px;
+        }
+        .back-video {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .back-video {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .back-video {
+                width: auto;
+                height: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="header">
+        <video autoplay loop class="back-video" muted playsinline>
+            <source src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/video.mp4?alt=media&token=b0b4707c-ee38-47cf-83d1-4f8932eb98f6"
+                    type="video/mp4">
+        </video>
+        <nav>
+            <img class="logo"
+                 src="https://firebasestorage.googleapis.com/v0/b/wangha-93b45.appspot.com/o/123.jpg?alt=media&token=e839a5b8-c4b2-402b-a76c-f465c273fbec"
+                 alt="">
+            <ul class="nav-links">
+                <li><a href="users?action=login" class="btn">Sign In</a></li>
+                <li><a href="users?action=register" class="btn">Sign Up</a></li>
+            </ul>
+        </nav>
 
+        <div class="content">
+            <h1>Learn HBT Online Mode</h1>
+            <form>
+                <input type="text" placeholder=" &#x270e; Enter Keyword">
+                <button type="submit">Find Course</button>
+            </form>
 
-<footer class="text-center text-lg-start bg-light text-muted">
-
-    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-
-        <div class="me-5 d-none d-lg-block">
-            <span style="color: darkred">Chào Mừng Đến Với LMS - Website cung cấp học liệu dành cho các học viên của Rikkei-Academy</span>
-        </div>
-        <div>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-google"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="" class="me-4 text-reset">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-
-    </section>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">LMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <c:if test="${user.name==null}">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="users?action=register">Register</a>
-                        </li>
-                    </c:if>
-                    <c:if test="${user.name==null}">
-                        <li class="nav-item">
-                            <a class="nav-link" href=users?action=login>Login</a>
-                        </li>
-                    </c:if>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div>
-        <div>
-            <h1 style="text-align: center;color: darkred;">WELL COM TO LMS</h1>
-        </div>
-
-        <div>
-            <div><h4>Chọn Register để đăng ký tài khoản mới</h4></div>
-            <div><h4>Chọn Login nếu bạn đã có tài khoản</h4></div>
-            <h1 style="text-align: center;color: black">FUN-----------------------------FUNCTION</h1>
-            <div><h2 style="color: red ; text-align: center">Ước mong của tui là có 1 nơi nào đó có thể thực hiện câu
-                SQL này của tôi:
-                SELECT Name, Phone, Address FROM World.Girls WHERE age>18 and age <28 and no_BF='true'</h2></div>
-            <div><h2 style="color: black ; text-align: center">Đằng sau 1 lập trình viên thành công là một người bạn
-                gái... không tồn tại.</h2></div>
-            <div><h2 style="color: crimson ; text-align: center">PM: Vì sao hôm qua cậu lấy cái ghế phang vào chú tester
-                phòng bên?
-                Dev: Mấy anh thông cảm, dạo này OT nhiều quá em không đủ sức cầm cái bàn...</h2></div>
         </div>
     </div>
-
-    <section class="">
-        <div class="container text-center text-md-start mt-5">
-
-            <div class="row mt-3">
-
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        <i class="fas fa-gem me-3"></i>Company name
-                    </h6>
-                    <p>
-                        Here you can use rows and columns to organize your footer content. Lorem ipsum
-                        dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                </div>
-
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Products
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Angular</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">React</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Vue</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Laravel</a>
-                    </p>
-                </div>
-
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                    <!-- Links -->
-                    <h6 class="text-uppercase fw-bold mb-4">
-                        Useful links
-                    </h6>
-                    <p>
-                        <a href="#!" class="text-reset">Pricing</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Settings</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Orders</a>
-                    </p>
-                    <p>
-                        <a href="#!" class="text-reset">Help</a>
-                    </p>
-                </div>
-
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                    <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-                    <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i class="fas fa-envelope me-3"></i>
-                        info@example.com
-                    </p>
-                    <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                    <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 1996-2002-1992 Copyright:
-        <a class="text-reset fw-bold" href="https://learn.rikkeiacademy.com/">LMS Rikkei academy</a>
-    </div>
-
-</footer>
-
 </body>
 </html>

@@ -19,8 +19,8 @@
         </div>
 
         <ul class="navbar-nav">
-            <li><a href="<%=request.getContextPath()%>/list"
-                   class="nav-link">Bai Doc</a></li>
+            <li><a href="/HomeServlet?action=goHome"
+                   class="nav-link">Trang Chu</a></li>
         </ul>
     </nav>
 </header>

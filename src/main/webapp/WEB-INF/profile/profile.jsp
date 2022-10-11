@@ -229,12 +229,6 @@
             <div class="dropdown">
                 <a href="/users?action=user"><p class="dropbtn">User</p></a>
             </div>
-
-
-            <%--            <div class="dropdown">--%>
-            <%--                <a href="/HomeServlet?action=lo-trinh"><p class="dropbtn">Lo trinh</p></a>--%>
-            <%--            </div>--%>
-
             <div class="dropdown">
                 <p class="dropbtn">Lo trinh</p>
                 <div class="dropdown-content">
